@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=4 uid="uid://4s82byrlbbvr"]
+[gd_scene load_steps=5 format=4 uid="uid://4s82byrlbbvr"]
 
 [ext_resource type="Script" path="res://scenes/room/room.gd" id="1_s76nn"]
 [ext_resource type="TileSet" uid="uid://bwkh1q4mn28ms" path="res://resources/room_tileset.tres" id="2_vpteo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnwg"]
 size = Vector2(96, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0cvk"]
+size = Vector2(96, 96)
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_s76nn")
@@ -27,3 +30,10 @@ tile_set = ExtResource("2_vpteo")
 position = Vector2(64, -112)
 shape = SubResource("RectangleShape2D_3gnwg")
 debug_color = Color(0.328218, 0.62181, 0.130076, 0.42)
+
+[node name="DroppableArea" type="Area2D" parent="."]
+position = Vector2(64, -96)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroppableArea"]
+shape = SubResource("RectangleShape2D_a0cvk")
