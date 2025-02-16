@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=4 uid="uid://dxav0633erlod"]
+
+[ext_resource type="Script" path="res://scenes/room/room.gd" id="1_ynuo3"]
+[ext_resource type="TileSet" uid="uid://bwkh1q4mn28ms" path="res://resources/room_tileset.tres" id="2_qf5ab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnwg"]
+size = Vector2(96, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0cvk"]
+size = Vector2(96, 96)
+
+[node name="RoomSouth" type="Node2D"]
+script = ExtResource("1_ynuo3")
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+z_index = 1
+tile_map_data = PackedByteArray("AAAAAPb/AQADAAEAAAAAAPf/AQACAAIAAAAAAPj/AQACAAIAAAAAAPn/AQACAAIAAAAAAPr/AQACAAIAAAAAAPv/AQACAAIAAAAAAPz/AQACAAIAAAAAAP3/AQACAAIAAAAAAP7/AQACAAIAAAADAPb/AQABAAAAAAADAPf/AgABAAAAAAAEAPb/AQABAAAAAAAEAPf/AgADAAAAAAAHAPb/AQAEAAEAAAAHAPf/AQAAAAIAAAAHAPj/AQAAAAIAAAAHAPn/AQAAAAIAAAAHAPr/AQAAAAIAAAAHAPv/AQAAAAIAAAAHAPz/AQAAAAIAAAAHAP3/AQAAAAIAAAAHAP7/AQAAAAIAAAAAAP//AQAFAAAAAAABAPb/AQABAAAAAAABAP//AQABAAEAAAACAPb/AQABAAAAAAACAP//AQABAAEAAAADAPj/AgABAAAAAAADAP//AQABAAEAAAAEAPj/AgADAAAAAAAEAP//AQABAAEAAAAFAPb/AQABAAAAAAAFAP//AQABAAEAAAAGAPb/AQABAAAAAAAGAP//AQABAAEAAAAHAP//AQAEAAAAAAA=")
+tile_set = ExtResource("2_qf5ab")
+
+[node name="GroundLayer" type="TileMapLayer" parent="TileMap"]
+z_index = -1
+tile_map_data = PackedByteArray("AAABAPn/AAAKAAIAAAABAPr/AAAKAAIAAAABAPv/AAAKAAIAAAABAPz/AAAKAAIAAAACAPn/AAAKAAIAAAACAPr/AAAKAAIAAAACAPv/AAAKAAIAAAACAPz/AAAKAAIAAAADAPn/AAAKAAIAAAADAPr/AAAKAAIAAAADAPv/AAAKAAIAAAADAPz/AAAKAAIAAAAEAPn/AAAKAAIAAAAEAPr/AAAKAAIAAAAEAPv/AAAKAAIAAAAEAPz/AAAKAAIAAAAFAPn/AAAKAAIAAAAFAPr/AAAKAAIAAAAFAPv/AAAKAAIAAAAFAPz/AAAKAAIAAAAGAPn/AAAKAAIAAAAGAPr/AAAKAAIAAAAGAPv/AAAKAAIAAAAGAPz/AAAKAAIAAAABAP3/AAAKAAIAAAABAP7/AAAKAAIAAAACAP3/AAAKAAIAAAACAP7/AAAKAAIAAAADAP3/AAAKAAIAAAADAP7/AAAKAAIAAAAEAP3/AAAKAAIAAAAEAP7/AAAKAAIAAAAFAP3/AAAKAAIAAAAFAP7/AAAKAAIAAAAGAP3/AAAKAAIAAAAGAP7/AAAKAAIAAAA=")
+tile_set = ExtResource("2_qf5ab")
+
+[node name="WallLayer" type="TileMapLayer" parent="TileMap"]
+z_index = -1
+tile_map_data = PackedByteArray("AAABAPf/AQAAAAQAAAABAPj/AQAAAAUAAAACAPf/AQABAAQAAAACAPj/AQABAAUAAAADAPf/AQABAAQAAAADAPj/AQABAAUAAAAEAPf/AQABAAQAAAAEAPj/AQABAAUAAAAFAPf/AQABAAQAAAAFAPj/AQABAAUAAAAGAPf/AQACAAQAAAAGAPj/AQACAAUAAAA=")
+tile_set = ExtResource("2_qf5ab")
+
+[node name="InteractArea" type="Area2D" parent="."]
+position = Vector2(64, -80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("RectangleShape2D_3gnwg")
+debug_color = Color(0.328218, 0.62181, 0.130076, 0.42)
+
+[node name="DroppableArea" type="Area2D" parent="."]
+position = Vector2(64, -64)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroppableArea"]
+shape = SubResource("RectangleShape2D_a0cvk")

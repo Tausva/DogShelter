@@ -4,7 +4,7 @@ var active_draggable_component: DraggableComponent
 var dragging: bool = false
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var mouse_position = get_viewport().get_mouse_position()
 	global_position = mouse_position 
 	

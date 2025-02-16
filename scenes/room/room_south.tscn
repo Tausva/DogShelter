@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://4s82byrlbbvr"]
 
-[ext_resource type="Script" path="res://scenes/room/room.gd" id="1_s76nn"]
-[ext_resource type="TileSet" uid="uid://bwkh1q4mn28ms" path="res://resources/room_tileset.tres" id="2_vpteo"]
+[ext_resource type="Script" path="res://scenes/room/room.gd" id="1_r7flh"]
+[ext_resource type="TileSet" uid="uid://bwkh1q4mn28ms" path="res://resources/room_tileset.tres" id="2_yap2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnwg"]
 size = Vector2(96, 128)
@@ -9,25 +9,25 @@ size = Vector2(96, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0cvk"]
 size = Vector2(96, 96)
 
-[node name="Room" type="Node2D"]
-script = ExtResource("1_s76nn")
+[node name="RoomSouth" type="Node2D"]
+script = ExtResource("1_r7flh")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAP3/AQAEAAIAAAABAP3/AQABAAAAAAACAP3/AQABAAAAAAADAP3/AQABAAAAAAADAP7/AgABAAAAAAADAP//AgABAAAAAAAEAP3/AQABAAAAAAAEAP7/AgADAAAAAAAEAP//AgADAAAAAAAFAP3/AQABAAAAAAAGAP3/AQABAAAAAAAAAPT/AQAGAAAAAAAAAPX/AQACAAIAAAAAAPb/AQACAAIAAAAAAPf/AQACAAIAAAAAAPj/AQACAAIAAAAAAPn/AQACAAIAAAAAAPr/AQACAAIAAAAAAPv/AQACAAIAAAAAAPz/AQACAAIAAAABAPT/AQABAAMAAAACAPT/AQABAAMAAAADAPT/AQABAAMAAAAEAPT/AQABAAMAAAAFAPT/AQABAAMAAAAGAPT/AQABAAMAAAAHAPT/AQAHAAAAAAAHAPX/AQAAAAIAAAAHAPb/AQAAAAIAAAAHAPf/AQAAAAIAAAAHAPj/AQAAAAIAAAAHAPn/AQAAAAIAAAAHAPr/AQAAAAIAAAAHAPv/AQAAAAIAAAAHAPz/AQAAAAIAAAAHAP3/AQAFAAIAAAA=")
-tile_set = ExtResource("2_vpteo")
+tile_set = ExtResource("2_yap2d")
 
 [node name="GroundLayer" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AAABAPf/AAAKAAIAAAACAPf/AAAKAAIAAAADAPf/AAAKAAIAAAAEAPf/AAAKAAIAAAAFAPf/AAAKAAIAAAAGAPf/AAAKAAIAAAAGAPj/AAAKAAIAAAAGAPn/AAAKAAIAAAAGAPr/AAAKAAIAAAAGAPv/AAAKAAIAAAAGAPz/AAAKAAIAAAAFAPz/AAAKAAIAAAAEAPz/AAAKAAIAAAADAPz/AAAKAAIAAAACAPz/AAAKAAIAAAABAPz/AAAKAAIAAAABAPv/AAAKAAIAAAABAPr/AAAKAAIAAAABAPn/AAAKAAIAAAABAPj/AAAKAAIAAAACAPj/AAAKAAIAAAACAPn/AAAKAAIAAAADAPn/AAAKAAIAAAADAPr/AAAKAAIAAAADAPv/AAAKAAIAAAACAPv/AAAKAAIAAAAEAPr/AAAKAAIAAAAEAPv/AAAKAAIAAAAFAPv/AAAKAAIAAAAFAPr/AAAKAAIAAAAFAPn/AAAKAAIAAAAFAPj/AAAKAAIAAAAEAPj/AAAKAAIAAAADAPj/AAAKAAIAAAAEAPn/AAAKAAIAAAACAPr/AAAKAAIAAAA=")
-tile_set = ExtResource("2_vpteo")
+tile_set = ExtResource("2_yap2d")
 
 [node name="WallLayer" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AAABAPX/AQAAAAQAAAABAPb/AQAAAAUAAAAGAPX/AQACAAQAAAAGAPb/AQACAAUAAAACAPX/AQABAAQAAAACAPb/AQABAAUAAAADAPX/AQABAAQAAAADAPb/AQABAAUAAAAEAPX/AQABAAQAAAAEAPb/AQABAAUAAAAFAPX/AQABAAQAAAAFAPb/AQABAAUAAAA=")
-tile_set = ExtResource("2_vpteo")
+tile_set = ExtResource("2_yap2d")
 
 [node name="InteractArea" type="Area2D" parent="."]
+position = Vector2(64, -112)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(64, -112)
 shape = SubResource("RectangleShape2D_3gnwg")
 debug_color = Color(0.328218, 0.62181, 0.130076, 0.42)
 
