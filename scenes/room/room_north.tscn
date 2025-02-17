@@ -1,7 +1,29 @@
-[gd_scene load_steps=5 format=4 uid="uid://dxav0633erlod"]
+[gd_scene load_steps=27 format=4 uid="uid://dxav0633erlod"]
 
 [ext_resource type="Script" path="res://scenes/room/room.gd" id="1_ynuo3"]
 [ext_resource type="TileSet" uid="uid://bwkh1q4mn28ms" path="res://resources/room_tileset.tres" id="2_qf5ab"]
+[ext_resource type="PackedScene" uid="uid://db20hjguk0dj7" path="res://scenes/room/ground/dark_tiles.tscn" id="3_7wiyh"]
+[ext_resource type="PackedScene" uid="uid://bvsj1cd6mh5dj" path="res://scenes/room/ground/blue_yellow.tscn" id="3_ewndn"]
+[ext_resource type="PackedScene" uid="uid://bogs8x5qdskei" path="res://scenes/room/walls/blue_walls.tscn" id="4_28asn"]
+[ext_resource type="PackedScene" uid="uid://cwtkpgt4ph431" path="res://scenes/room/ground/dark_wood.tscn" id="4_nomf1"]
+[ext_resource type="PackedScene" uid="uid://dshjq8e5a4byh" path="res://scenes/room/ground/light_wood.tscn" id="5_0f4of"]
+[ext_resource type="PackedScene" uid="uid://cav7a454g8g0p" path="res://scenes/room/ground/pink.tscn" id="6_eeftd"]
+[ext_resource type="PackedScene" uid="uid://dxx5cudlt5tiu" path="res://scenes/room/ground/pink_cream.tscn" id="7_hoqfb"]
+[ext_resource type="PackedScene" uid="uid://6p7t8855847s" path="res://scenes/room/walls/cream_walls.tscn" id="9_08kw8"]
+[ext_resource type="PackedScene" uid="uid://cku6ymowk7hi6" path="res://scenes/room/walls/green_walls.tscn" id="10_6223v"]
+[ext_resource type="PackedScene" uid="uid://cldjbg1y4n288" path="res://scenes/room/walls/magenta_walls.tscn" id="11_uj465"]
+[ext_resource type="PackedScene" uid="uid://d4f6uq01s1sgx" path="res://scenes/room/walls/pink_walls.tscn" id="12_ijgx2"]
+[ext_resource type="PackedScene" uid="uid://ceor6nbdvpsi8" path="res://scenes/room/decor/decor.tscn" id="14_o2qnh"]
+[ext_resource type="Texture2D" uid="uid://dgqcwcyf7qk6b" path="res://assets/16x16/carpet_1.png" id="15_momqm"]
+[ext_resource type="Texture2D" uid="uid://d34waeef5q2s7" path="res://assets/16x16/carpet_2.png" id="16_r7of5"]
+[ext_resource type="Texture2D" uid="uid://bm1mmuip847g8" path="res://assets/16x16/carpet_3.png" id="17_6c48j"]
+[ext_resource type="Texture2D" uid="uid://cd13bto08u8f6" path="res://assets/16x16/carpet_4.png" id="18_yf4pi"]
+[ext_resource type="Texture2D" uid="uid://1ocs5cpj5s0s" path="res://assets/16x16/ball.png" id="19_85kri"]
+[ext_resource type="Texture2D" uid="uid://c336ebi6ue3p4" path="res://assets/16x16/pillow_1.png" id="20_ggi22"]
+[ext_resource type="Texture2D" uid="uid://d2niidpesl4sg" path="res://assets/16x16/pillow_2.png" id="21_skegy"]
+[ext_resource type="Texture2D" uid="uid://d0egyxul6bptd" path="res://assets/16x16/pillow_3.png" id="22_ayju0"]
+[ext_resource type="Texture2D" uid="uid://brrrvwrusdnto" path="res://assets/16x16/chest.png" id="23_yn2rl"]
+[ext_resource type="Texture2D" uid="uid://dmgw22fd4p87m" path="res://assets/16x16/window_outside.png" id="24_k145n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnwg"]
 size = Vector2(96, 128)
@@ -9,23 +31,44 @@ size = Vector2(96, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0cvk"]
 size = Vector2(96, 96)
 
-[node name="RoomSouth" type="Node2D"]
+[node name="RoomNorth" type="Node2D"]
 script = ExtResource("1_ynuo3")
+ground_presets = Array[PackedScene]([ExtResource("3_ewndn"), ExtResource("3_7wiyh"), ExtResource("4_nomf1"), ExtResource("5_0f4of"), ExtResource("6_eeftd"), ExtResource("7_hoqfb")])
+wall_presets = Array[PackedScene]([ExtResource("4_28asn"), ExtResource("9_08kw8"), ExtResource("10_6223v"), ExtResource("11_uj465"), ExtResource("12_ijgx2")])
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 z_index = 1
 tile_map_data = PackedByteArray("AAAAAPb/AQADAAEAAAAAAPf/AQACAAIAAAAAAPj/AQACAAIAAAAAAPn/AQACAAIAAAAAAPr/AQACAAIAAAAAAPv/AQACAAIAAAAAAPz/AQACAAIAAAAAAP3/AQACAAIAAAAAAP7/AQACAAIAAAADAPb/AQABAAAAAAADAPf/AgABAAAAAAAEAPb/AQABAAAAAAAEAPf/AgADAAAAAAAHAPb/AQAEAAEAAAAHAPf/AQAAAAIAAAAHAPj/AQAAAAIAAAAHAPn/AQAAAAIAAAAHAPr/AQAAAAIAAAAHAPv/AQAAAAIAAAAHAPz/AQAAAAIAAAAHAP3/AQAAAAIAAAAHAP7/AQAAAAIAAAAAAP//AQAFAAAAAAABAPb/AQABAAAAAAABAP//AQABAAEAAAACAPb/AQABAAAAAAACAP//AQABAAEAAAADAPj/AgABAAAAAAADAP//AQABAAEAAAAEAPj/AgADAAAAAAAEAP//AQABAAEAAAAFAPb/AQABAAAAAAAFAP//AQABAAEAAAAGAPb/AQABAAAAAAAGAP//AQABAAEAAAAHAP//AQAEAAAAAAA=")
 tile_set = ExtResource("2_qf5ab")
 
-[node name="GroundLayer" type="TileMapLayer" parent="TileMap"]
-z_index = -1
-tile_map_data = PackedByteArray("AAABAPn/AAAKAAIAAAABAPr/AAAKAAIAAAABAPv/AAAKAAIAAAABAPz/AAAKAAIAAAACAPn/AAAKAAIAAAACAPr/AAAKAAIAAAACAPv/AAAKAAIAAAACAPz/AAAKAAIAAAADAPn/AAAKAAIAAAADAPr/AAAKAAIAAAADAPv/AAAKAAIAAAADAPz/AAAKAAIAAAAEAPn/AAAKAAIAAAAEAPr/AAAKAAIAAAAEAPv/AAAKAAIAAAAEAPz/AAAKAAIAAAAFAPn/AAAKAAIAAAAFAPr/AAAKAAIAAAAFAPv/AAAKAAIAAAAFAPz/AAAKAAIAAAAGAPn/AAAKAAIAAAAGAPr/AAAKAAIAAAAGAPv/AAAKAAIAAAAGAPz/AAAKAAIAAAABAP3/AAAKAAIAAAABAP7/AAAKAAIAAAACAP3/AAAKAAIAAAACAP7/AAAKAAIAAAADAP3/AAAKAAIAAAADAP7/AAAKAAIAAAAEAP3/AAAKAAIAAAAEAP7/AAAKAAIAAAAFAP3/AAAKAAIAAAAFAP7/AAAKAAIAAAAGAP3/AAAKAAIAAAAGAP7/AAAKAAIAAAA=")
-tile_set = ExtResource("2_qf5ab")
+[node name="GroundLayer" parent="TileMap" instance=ExtResource("3_ewndn")]
 
-[node name="WallLayer" type="TileMapLayer" parent="TileMap"]
-z_index = -1
-tile_map_data = PackedByteArray("AAABAPf/AQAAAAQAAAABAPj/AQAAAAUAAAACAPf/AQABAAQAAAACAPj/AQABAAUAAAADAPf/AQABAAQAAAADAPj/AQABAAUAAAAEAPf/AQABAAQAAAAEAPj/AQABAAUAAAAFAPf/AQABAAQAAAAFAPj/AQABAAUAAAAGAPf/AQACAAQAAAAGAPj/AQACAAUAAAA=")
-tile_set = ExtResource("2_qf5ab")
+[node name="WallLayer" parent="TileMap" instance=ExtResource("4_28asn")]
+
+[node name="Decor" parent="." instance=ExtResource("14_o2qnh")]
+position = Vector2(64, -64)
+variations = Array[Texture]([ExtResource("15_momqm"), ExtResource("16_r7of5"), ExtResource("17_6c48j"), ExtResource("18_yf4pi")])
+chance_of_spawning = 0.6
+
+[node name="Decor2" parent="." instance=ExtResource("14_o2qnh")]
+position = Vector2(35, -103)
+variations = Array[Texture]([ExtResource("19_85kri"), ExtResource("20_ggi22"), ExtResource("21_skegy"), ExtResource("22_ayju0"), ExtResource("23_yn2rl")])
+chance_of_spawning = 0.3
+
+[node name="Decor3" parent="." instance=ExtResource("14_o2qnh")]
+position = Vector2(38, -28)
+variations = Array[Texture]([ExtResource("19_85kri"), ExtResource("20_ggi22"), ExtResource("21_skegy"), ExtResource("22_ayju0"), ExtResource("23_yn2rl")])
+chance_of_spawning = 0.3
+
+[node name="Decor4" parent="." instance=ExtResource("14_o2qnh")]
+position = Vector2(92, -86)
+variations = Array[Texture]([ExtResource("19_85kri"), ExtResource("20_ggi22"), ExtResource("21_skegy"), ExtResource("22_ayju0"), ExtResource("23_yn2rl")])
+chance_of_spawning = 0.3
+
+[node name="Window" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(64, 31)
+texture = ExtResource("24_k145n")
 
 [node name="InteractArea" type="Area2D" parent="."]
 position = Vector2(64, -80)

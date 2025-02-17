@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceor6nbdvpsi8"]
+
+[ext_resource type="Script" path="res://scenes/room/decor/decor.gd" id="1_o68ia"]
+
+[node name="Decor" type="Sprite2D"]
+script = ExtResource("1_o68ia")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=4 uid="uid://d4f6uq01s1sgx"]
+
+[ext_resource type="TileSet" uid="uid://bwkh1q4mn28ms" path="res://resources/room_tileset.tres" id="1_vcw7w"]
+
+[node name="WallLayer" type="TileMapLayer"]
+z_index = -1
+tile_map_data = PackedByteArray("AAABAPf/AQAAAAQAAAABAPj/AQAAAAUAAAACAPf/AQABAAQAAAACAPj/AQABAAUAAAADAPf/AQABAAQAAAADAPj/AQABAAUAAAAEAPf/AQABAAQAAAAEAPj/AQABAAUAAAAFAPf/AQABAAQAAAAFAPj/AQABAAUAAAAGAPf/AQACAAQAAAAGAPj/AQACAAUAAAA=")
+tile_set = ExtResource("1_vcw7w")
