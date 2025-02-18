@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var dog_traits: Array[String] = []
+var random_number_generator = RandomNumberGenerator.new()
 
 
 func _ready() -> void:
@@ -15,11 +16,12 @@ func _process(delta: float) -> void:
 
 func set_random_dog_texture(sprite: Sprite2D):
 	var texture_atlas = preload("res://scenes/dog/dog_atlas_texture.tres")
-	var random_number_generator = RandomNumberGenerator.new()
 	var random_collumn = random_number_generator.randi_range(0, 15)
 	var random_row = random_number_generator.randi_range(0, 2)
-	texture_atlas.region = Rect2(random_collumn * 16,random_row * 16,16,16)
-	sprite.texture = texture_atlas
+	var region = Rect2(random_collumn * 16,random_row * 16,16,16)
+	var new_texture = texture_atlas.duplicate()
+	new_texture.region = region
+	sprite.texture = new_texture
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
