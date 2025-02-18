@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwopiytt2dth5"]
+[gd_scene load_steps=4 format=3 uid="uid://bwopiytt2dth5"]
 
 [ext_resource type="PackedScene" uid="uid://cjnhjj8fcmihv" path="res://scenes/cursor/cursor.tscn" id="2_ar4kh"]
+[ext_resource type="PackedScene" uid="uid://c4udinlll0vf8" path="res://scenes/shelter/shelter.tscn" id="3_qnhgq"]
 [ext_resource type="PackedScene" uid="uid://nck7rxri5mp8" path="res://scenes/DogSpawTimer/dog_spawn_timer.tscn" id="3_xsrpf"]
 
 [node name="MartiumTestScene" type="Node2D"]
@@ -9,3 +10,6 @@
 
 [node name="DogSpawnTimer" parent="." instance=ExtResource("3_xsrpf")]
 position = Vector2(132, 132)
+
+[node name="Shelter" parent="." instance=ExtResource("3_qnhgq")]
+position = Vector2(787, 176)

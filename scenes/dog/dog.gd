@@ -25,7 +25,6 @@ func set_random_dog_texture(sprite: Sprite2D):
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("entered")
 	var line_count = dog_traits.size()
 	var line_height = 25
 	$TraitTextBox.custom_minimum_size.y = line_count
@@ -35,6 +34,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	print("leaved")
 	$TraitTextBox.hide()
 	pass # Replace with function body.
