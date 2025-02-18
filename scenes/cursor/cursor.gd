@@ -5,7 +5,7 @@ var dragging: bool = false
 
 
 func _process(_delta: float) -> void:
-	var mouse_position = get_viewport().get_mouse_position()
+	var mouse_position = get_global_mouse_position()
 	global_position = mouse_position 
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and active_draggable_component:

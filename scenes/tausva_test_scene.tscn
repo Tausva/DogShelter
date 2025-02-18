@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvf718ln53rwa"]
+[gd_scene load_steps=8 format=3 uid="uid://dvf718ln53rwa"]
 
 [ext_resource type="PackedScene" uid="uid://c4udinlll0vf8" path="res://scenes/shelter/shelter.tscn" id="1_il057"]
 [ext_resource type="PackedScene" uid="uid://cjnhjj8fcmihv" path="res://scenes/cursor/cursor.tscn" id="2_lh84g"]
 [ext_resource type="PackedScene" uid="uid://fa7xb6y6p17m" path="res://scenes/components/draggable_component/draggable_component.tscn" id="3_qpi6i"]
 [ext_resource type="Texture2D" uid="uid://bh4rpd1jxvja" path="res://icon.svg" id="4_6vonr"]
+[ext_resource type="PackedScene" uid="uid://nck7rxri5mp8" path="res://scenes/DogSpawTimer/dog_spawn_timer.tscn" id="4_oporp"]
 [ext_resource type="PackedScene" uid="uid://dimkdnbwbvsfd" path="res://scenes/camera_controller/camera_controller.tscn" id="5_voecc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2ttr"]
@@ -11,10 +12,12 @@ size = Vector2(127, 125)
 
 [node name="TausvaTestScene" type="Node"]
 
-[node name="Shelter" parent="." instance=ExtResource("1_il057")]
-position = Vector2(576, 305)
+[node name="CameraController" parent="." instance=ExtResource("5_voecc")]
 
 [node name="cursor" parent="." instance=ExtResource("2_lh84g")]
+position = Vector2(576, 305)
+
+[node name="Shelter" parent="." instance=ExtResource("1_il057")]
 position = Vector2(576, 305)
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -30,4 +33,4 @@ shape = SubResource("RectangleShape2D_q2ttr")
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("4_6vonr")
 
-[node name="CameraController" parent="." instance=ExtResource("5_voecc")]
+[node name="DogSpawnTimer" parent="." instance=ExtResource("4_oporp")]

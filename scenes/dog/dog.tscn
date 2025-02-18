@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccw8k1rr6elry"]
+[gd_scene load_steps=5 format=3 uid="uid://ccw8k1rr6elry"]
 
 [ext_resource type="Script" path="res://scenes/dog/dog.gd" id="1_x8gcv"]
+[ext_resource type="PackedScene" uid="uid://fa7xb6y6p17m" path="res://scenes/components/draggable_component/draggable_component.tscn" id="2_28nnr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1skng"]
 radius = 11.4018
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruwnp"]
+size = Vector2(23, 23)
 
 [node name="Dog" type="Node2D"]
 script = ExtResource("1_x8gcv")
@@ -21,6 +25,11 @@ offset_left = 19.0
 offset_top = -61.0
 offset_right = 307.0
 offset_bottom = -15.0
+
+[node name="DraggableComponent" parent="." instance=ExtResource("2_28nnr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DraggableComponent"]
+shape = SubResource("RectangleShape2D_ruwnp")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
