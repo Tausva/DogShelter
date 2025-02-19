@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://4s82byrlbbvr"]
+[gd_scene load_steps=29 format=4 uid="uid://4s82byrlbbvr"]
 
 [ext_resource type="Script" path="res://scenes/room/room.gd" id="1_r7flh"]
 [ext_resource type="PackedScene" uid="uid://bvsj1cd6mh5dj" path="res://scenes/room/ground/blue_yellow.tscn" id="2_8wamc"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://d2niidpesl4sg" path="res://assets/16x16/pillow_2.png" id="21_ppbii"]
 [ext_resource type="Texture2D" uid="uid://d0egyxul6bptd" path="res://assets/16x16/pillow_3.png" id="22_hwhwq"]
 [ext_resource type="Texture2D" uid="uid://brrrvwrusdnto" path="res://assets/16x16/chest.png" id="23_yxrlb"]
+[ext_resource type="PackedScene" uid="uid://0d5edy8iikhq" path="res://scenes/components/trait_text_box/trait_text_box_component.tscn" id="25_ngone"]
 [ext_resource type="Texture2D" uid="uid://ovn5ih13q6it" path="res://assets/16x16/window_inside.png" id="25_o77wu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnwg"]
@@ -30,6 +31,9 @@ size = Vector2(96, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0cvk"]
 size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6jts"]
+size = Vector2(96, 128)
 
 [node name="RoomSouth" type="Node2D"]
 script = ExtResource("1_r7flh")
@@ -83,3 +87,9 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DroppableArea"]
 shape = SubResource("RectangleShape2D_a0cvk")
+
+[node name="TraitTextBoxComponent" parent="." instance=ExtResource("25_ngone")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TraitTextBoxComponent"]
+position = Vector2(64, -112)
+shape = SubResource("RectangleShape2D_o6jts")

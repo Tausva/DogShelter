@@ -1,4 +1,4 @@
-extends Node2D
+class_name Dog extends Node2D
 
 @export var dog_trait_library: Array[Trait]
 
@@ -14,9 +14,8 @@ var dog_traits_in_string: String
 
 
 func _ready() -> void:
-	var sprite = get_node("Area2D/DogSprite")
+	var sprite = get_node("DogSprite")
 	set_random_dog_texture(sprite)
-	$TraitTextBox.hide()
 	_generate_traits()
 
 
@@ -38,6 +37,8 @@ func _generate_traits() -> void:
 		var dog_trait = dog_trait_library.pop_back()
 		dog_traits.append(dog_trait)
 		dog_traits_in_string += dog_trait.TraitType.keys()[dog_trait.current_trait] + "\n"
+	
+	$TraitTextBoxComponent.update_traits(dog_traits_in_string, dog_traits.size())
 
 
 func _get_trait_count() -> int:
@@ -53,16 +54,3 @@ func _get_trait_count() -> int:
 			trait_count_picker -= trait_chance_table[key]
 	
 	return 0
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	var line_count = dog_traits.size()
-	var line_height = 25
-	$TraitTextBox.custom_minimum_size.y = line_count
-	$TraitTextBox.size.y = line_count * line_height
-	$TraitTextBox.text = dog_traits_in_string
-	$TraitTextBox.show()
-
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	$TraitTextBox.hide()

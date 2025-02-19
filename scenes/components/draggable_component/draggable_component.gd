@@ -1,6 +1,7 @@
 class_name DraggableComponent extends Area2D
 
 var starting_position: Vector2 = Vector2.ZERO
+var new_room: Room
 var current_room: Room
 var half_size: Vector2
 var occupied_position: Vector2
@@ -25,11 +26,16 @@ func drag(new_position: Vector2) -> void:
 
 
 func release() -> void:
-	if !current_room:
+	if !new_room:
 		get_parent().global_position = starting_position
 	else:
 		starting_position = Vector2.ZERO
-		_snap_to_room(current_room.get_room_area())
+		_snap_to_room(new_room.get_room_area())
+		new_room.assign_dog(owner)
+		if current_room:
+			current_room.remove_dog(owner)
+		current_room = new_room
+	
 	is_being_dragged = false
 	emit_signal("dragging_started", is_being_dragged, get_parent())
 
@@ -52,9 +58,9 @@ func _snap_to_room(area_to_snap: Area2D) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.owner is Room:
-		current_room = area.owner
+		new_room = area.owner
 
 
 func _on_area_exited(area: Area2D) -> void:
-	if area.owner is Room and current_room == area.owner:
-		current_room = null
+	if area.owner is Room and new_room == area.owner:
+		new_room = null

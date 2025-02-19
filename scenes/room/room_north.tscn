@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dxav0633erlod"]
+[gd_scene load_steps=29 format=4 uid="uid://dxav0633erlod"]
 
 [ext_resource type="Script" path="res://scenes/room/room.gd" id="1_ynuo3"]
 [ext_resource type="TileSet" uid="uid://bwkh1q4mn28ms" path="res://resources/room_tileset.tres" id="2_qf5ab"]
@@ -24,12 +24,16 @@
 [ext_resource type="Texture2D" uid="uid://d0egyxul6bptd" path="res://assets/16x16/pillow_3.png" id="22_ayju0"]
 [ext_resource type="Texture2D" uid="uid://brrrvwrusdnto" path="res://assets/16x16/chest.png" id="23_yn2rl"]
 [ext_resource type="Texture2D" uid="uid://dmgw22fd4p87m" path="res://assets/16x16/window_outside.png" id="24_k145n"]
+[ext_resource type="PackedScene" uid="uid://0d5edy8iikhq" path="res://scenes/components/trait_text_box/trait_text_box_component.tscn" id="25_win77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnwg"]
 size = Vector2(96, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0cvk"]
 size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmlpf"]
+size = Vector2(95, 128)
 
 [node name="RoomNorth" type="Node2D"]
 script = ExtResource("1_ynuo3")
@@ -83,3 +87,9 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DroppableArea"]
 shape = SubResource("RectangleShape2D_a0cvk")
+
+[node name="TraitTextBoxComponent" parent="." instance=ExtResource("25_win77")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TraitTextBoxComponent"]
+position = Vector2(63.5, -80)
+shape = SubResource("RectangleShape2D_dmlpf")
