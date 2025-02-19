@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Trait" load_steps=2 format=3 uid="uid://dty6mj4gkvyxg"]
+
+[ext_resource type="Script" path="res://scripts/trait.gd" id="1_b77mi"]
+
+[resource]
+script = ExtResource("1_b77mi")
+current_trait = 2
+hated_traits = Array[int]([])
