@@ -55,7 +55,7 @@ func _recalculate_room_traits() -> void:
 	
 	var trait_string: String
 	for dog_trait in traits:
-		trait_string += Trait.TraitType.keys()[dog_trait]
+		trait_string += Trait.TraitType.keys()[dog_trait].capitalize()
 		if traits[dog_trait] > 1:
 			trait_string += " x " + str(traits[dog_trait])
 		trait_string += "\n"

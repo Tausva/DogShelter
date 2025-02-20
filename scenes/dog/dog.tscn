@@ -22,10 +22,14 @@ dog_trait_library = Array[ExtResource("2_aypbe")]([ExtResource("3_1gm54"), ExtRe
 
 [node name="DogSprite" type="Sprite2D" parent="."]
 
-[node name="TraitTextBoxComponent" parent="." instance=ExtResource("8_1j3fx")]
+[node name="TraitTextBoxComponent" parent="." node_paths=PackedStringArray("box_spawn_point") instance=ExtResource("8_1j3fx")]
+box_spawn_point = NodePath("SpawnPoint")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TraitTextBoxComponent"]
 shape = SubResource("CircleShape2D_i3oar")
+
+[node name="SpawnPoint" type="Node2D" parent="TraitTextBoxComponent"]
+position = Vector2(24, 0)
 
 [node name="DraggableComponent" parent="." instance=ExtResource("2_28nnr")]
 

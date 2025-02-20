@@ -7,7 +7,7 @@
 
 [node name="TausvaTestScene" type="Node"]
 
-[node name="CameraController" parent="." instance=ExtResource("5_voecc")]
+[node name="CameraController" parent="." groups=["camera"] instance=ExtResource("5_voecc")]
 position = Vector2(578, 324)
 
 [node name="cursor" parent="." instance=ExtResource("2_lh84g")]

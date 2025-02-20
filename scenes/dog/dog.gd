@@ -36,7 +36,7 @@ func _generate_traits() -> void:
 		dog_trait_library.shuffle()
 		var dog_trait = dog_trait_library.pop_back()
 		dog_traits.append(dog_trait)
-		dog_traits_in_string += dog_trait.TraitType.keys()[dog_trait.current_trait] + "\n"
+		dog_traits_in_string += dog_trait.TraitType.keys()[dog_trait.current_trait].capitalize() + "\n"
 	
 	$TraitTextBoxComponent.update_traits(dog_traits_in_string, dog_traits.size())
 

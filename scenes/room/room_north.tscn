@@ -88,8 +88,12 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DroppableArea"]
 shape = SubResource("RectangleShape2D_a0cvk")
 
-[node name="TraitTextBoxComponent" parent="." instance=ExtResource("25_win77")]
+[node name="TraitTextBoxComponent" parent="." node_paths=PackedStringArray("box_spawn_point") instance=ExtResource("25_win77")]
+box_spawn_point = NodePath("SpawnPosition")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TraitTextBoxComponent"]
 position = Vector2(63.5, -80)
 shape = SubResource("RectangleShape2D_dmlpf")
+
+[node name="SpawnPosition" type="Node2D" parent="TraitTextBoxComponent"]
+position = Vector2(133, -74)
