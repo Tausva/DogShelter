@@ -15,12 +15,13 @@ run/main_scene="res://scenes/MartiumTest/martium_test_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
-[global_group]
-
-camera=""
 [autoload]
 
 GameManager="*res://game_manager.gd"
+
+[global_group]
+
+camera=""
 
 [input]
 

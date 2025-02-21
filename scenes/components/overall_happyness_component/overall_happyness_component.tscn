@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvxcoja7ghjj3"]
+
+[ext_resource type="Script" path="res://scenes/components/overall_happyness_component/overall_happyness_component.gd" id="1_su7q5"]
+
+[node name="OverallHappynessComponent" type="Node2D"]
+script = ExtResource("1_su7q5")
+
+[node name="IsHappyTimer" type="Timer" parent="."]
