@@ -1,10 +1,14 @@
 class_name Shelter extends Node2D
 
+signal room_price_increased(int)
+
 @onready var room_container: Node2D = $RoomContainer
 
 @export var room_spots: Array[RoomPosition]
 
 var purchase_border_y_offset: float = -30
+var old_price: int = 1
+var current_price: int = 1
 
 var populated_rooms: Array[RoomPosition]
 var newest_room_index: int = 0
@@ -20,6 +24,8 @@ func _ready() -> void:
 	
 	add_purchase_border(room_spots.pop_front())
 	add_purchase_border(room_spots.pop_front())
+	
+	room_price_increased.emit(current_price)
 
 
 func add_room(room_position: RoomPosition) -> void:
@@ -47,6 +53,7 @@ func add_purchase_border(border_position: RoomPosition) -> PurchaseBorder:
 	purchase_border_instance.position = border_position.coordinates
 	purchase_border_instance.border_position = border_position
 	purchase_border_instance.purchased.connect(_on_room_purchased)
+	room_price_increased.connect(purchase_border_instance._on_price_increase)
 	
 	if border_position.direction == border_position.Direction.SOUTH:
 		purchase_border_instance.position.y += purchase_border_y_offset
@@ -66,8 +73,17 @@ func _assign_adjesent_rooms(room: RoomPosition) -> void:
 			room.assigned_room.set_adjecent_room(adjecent_room.assigned_room)
 
 
+func _increase_room_price() -> int:
+	current_price = current_price + old_price
+	old_price = current_price - old_price
+	
+	return current_price
+
+
 func _on_room_purchased(room_position: RoomPosition) -> void:
 	add_room(room_position)
 	
 	if room_spots.size() > 0:
 		add_purchase_border(room_spots.pop_front())
+	
+	room_price_increased.emit(_increase_room_price())
