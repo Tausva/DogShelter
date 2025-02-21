@@ -1,5 +1,7 @@
 extends Node
 
+signal happiness_changed
+
 var total_funds: int = 0
 var happy_metric_value: int = 0
 
@@ -18,8 +20,15 @@ func spend_funds(price: int) -> bool:
 	return true
 
 
-func add_happy(isHappy: bool, value: int):
-	if isHappy:
+func add_happy(is_Happy: bool, value: int):
+	if is_Happy:
 		happy_metric_value += value
 	else:
 		happy_metric_value -= value
+	happy_metric_value = clamp(happy_metric_value, -100, 100)
+	
+	emit_signal("happiness_changed")
+
+
+func get_happy_metric_value() -> int:
+	return happy_metric_value

@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 
 
 func _on_happy_progress_timer_timeout():
+	GameManager.add_happy(is_happy, 1)
 	if is_happy and progress_bar.value < 100:
 		progress_bar.show()
 		progress_bar.value += 1

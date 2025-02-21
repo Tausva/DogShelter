@@ -1,8 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvxcoja7ghjj3"]
+[gd_scene load_steps=4 format=3 uid="uid://cvxcoja7ghjj3"]
 
 [ext_resource type="Script" path="res://scenes/components/overall_happyness_component/overall_happyness_component.gd" id="1_su7q5"]
+[ext_resource type="Texture2D" uid="uid://byiros5lsoc8k" path="res://assets/16x16/happy.png" id="2_ru6t5"]
+[ext_resource type="Texture2D" uid="uid://heaaaxcsbnpf" path="res://assets/16x16/angry.png" id="3_x4su4"]
 
 [node name="OverallHappynessComponent" type="Node2D"]
 script = ExtResource("1_su7q5")
 
-[node name="IsHappyTimer" type="Timer" parent="."]
+[node name="HappyBar" type="ProgressBar" parent="."]
+offset_right = 347.0
+offset_bottom = 29.0
+min_value = -100.0
+
+[node name="Happy" type="Sprite2D" parent="."]
+position = Vector2(329.25, 14)
+scale = Vector2(1.65625, 1.375)
+texture = ExtResource("2_ru6t5")
+
+[node name="Angry" type="Sprite2D" parent="."]
+position = Vector2(20, 15)
+scale = Vector2(1.8125, 1.75)
+texture = ExtResource("3_x4su4")
