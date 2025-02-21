@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var progress_bar = $HappyProgressBar
 @onready var happy_progress_timer = $HappyProgressTimer
-@onready var is_happy_check_timer = $IsHappyCheckTimer
 @onready var angry_image = $AngryImage
 
 @export var is_happy = true
@@ -13,7 +12,6 @@ extends Node2D
 func _ready() -> void:
 	progress_bar.value = 0
 	happy_progress_timer.timeout.connect(_on_happy_progress_timer_timeout)
-	is_happy_check_timer.timeout.connect(_on_is_happy_check_timer_timeout)
 	progress_bar.mouse_filter = Control.MOUSE_FILTER_STOP
 	progress_bar.gui_input.connect(_on_progress_bar_clicked)
 	happy_progress_timer.start()
@@ -33,16 +31,9 @@ func _on_happy_progress_timer_timeout():
 	elif is_happy:
 		progress_bar.show()
 	else:
-		is_happy_check_timer.start()
 		progress_bar.value = 0
 		progress_bar.hide()
 		angry_image.show()
-
-
-func _on_is_happy_check_timer_timeout():
-	if is_happy and happy_progress_timer.is_stopped():
-		happy_progress_timer.start()
-		is_happy_check_timer.stop()
 
 
 func _on_progress_bar_clicked(event: InputEvent):
