@@ -14,8 +14,8 @@ func get_funds() -> int:
 func spend_funds(price: int) -> bool:
 	if price > total_funds:
 		return false
-	
 	total_funds = total_funds - price
+	return true
 
 
 func add_happy(isHappy: bool, value: int):
