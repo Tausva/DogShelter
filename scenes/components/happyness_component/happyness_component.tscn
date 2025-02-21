@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyoa84fg3cv5m"]
+
+[ext_resource type="Texture2D" uid="uid://byiros5lsoc8k" path="res://assets/16x16/happy.png" id="1_rkdje"]
+[ext_resource type="Script" path="res://scenes/components/happyness_component/happyness_component.gd" id="1_txwdk"]
+[ext_resource type="Texture2D" uid="uid://heaaaxcsbnpf" path="res://assets/16x16/angry.png" id="2_c3lwg"]
+
+[node name="Happyness Component" type="Node2D"]
+script = ExtResource("1_txwdk")
+
+[node name="HappyProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 55.0
+fill_mode = 4
+texture_progress = ExtResource("1_rkdje")
+
+[node name="HappyProgressTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="IsHappyCheckTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="AngryImage" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("2_c3lwg")
