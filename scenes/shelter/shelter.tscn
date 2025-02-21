@@ -9,108 +9,126 @@ script = ExtResource("2_plup2")
 coordinates = Vector2(0, 0)
 has_window = false
 direction = 0
+adjecent_positions = Array[int]([2])
 
 [sub_resource type="Resource" id="Resource_jtpu5"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(0, 192)
 has_window = false
 direction = 1
+adjecent_positions = Array[int]([3])
 
 [sub_resource type="Resource" id="Resource_ckwss"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-128, 0)
 has_window = false
 direction = 0
+adjecent_positions = Array[int]([0])
 
 [sub_resource type="Resource" id="Resource_yg8hy"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-128, 192)
 has_window = false
 direction = 1
+adjecent_positions = Array[int]([1])
 
 [sub_resource type="Resource" id="Resource_xpho7"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-352, 0)
 has_window = false
 direction = 0
+adjecent_positions = Array[int]([8])
 
 [sub_resource type="Resource" id="Resource_th6ss"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-352, 192)
 has_window = false
 direction = 1
+adjecent_positions = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0])
 
 [sub_resource type="Resource" id="Resource_sa8q3"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-16, -240)
 has_window = true
 direction = 0
+adjecent_positions = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
 [sub_resource type="Resource" id="Resource_e3ee1"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-16, 432)
 has_window = true
 direction = 1
+adjecent_positions = Array[int]([11])
 
 [sub_resource type="Resource" id="Resource_rk1sv"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-480, 0)
 has_window = false
 direction = 0
+adjecent_positions = Array[int]([4, 12])
 
 [sub_resource type="Resource" id="Resource_hpg4n"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-480, 192)
 has_window = false
 direction = 1
+adjecent_positions = Array[int]([5, 13])
 
 [sub_resource type="Resource" id="Resource_mm1hc"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-144, -240)
 has_window = true
 direction = 0
+adjecent_positions = Array[int]([6, 14])
 
 [sub_resource type="Resource" id="Resource_6asro"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-144, 432)
 has_window = true
 direction = 1
+adjecent_positions = Array[int]([7, 15])
 
 [sub_resource type="Resource" id="Resource_xfpl2"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-608, 0)
 has_window = true
 direction = 0
+adjecent_positions = Array[int]([8])
 
 [sub_resource type="Resource" id="Resource_6x7ii"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-608, 192)
 has_window = true
 direction = 1
+adjecent_positions = Array[int]([9])
 
 [sub_resource type="Resource" id="Resource_gtxct"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-272, -240)
 has_window = true
 direction = 0
+adjecent_positions = Array[int]([10, 16])
 
 [sub_resource type="Resource" id="Resource_yt14m"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-272, 432)
 has_window = true
 direction = 1
+adjecent_positions = Array[int]([11, 17])
 
 [sub_resource type="Resource" id="Resource_nlxwy"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-400, -240)
 has_window = true
 direction = 0
+adjecent_positions = Array[int]([14])
 
 [sub_resource type="Resource" id="Resource_6av3s"]
 script = ExtResource("2_plup2")
 coordinates = Vector2(-400, 432)
 has_window = true
 direction = 1
+adjecent_positions = Array[int]([15])
 
 [node name="Shelter" type="Node2D"]
 script = ExtResource("1_iuunh")
