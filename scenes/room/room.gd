@@ -103,6 +103,12 @@ func _recalculate_room_traits() -> void:
 		traits_size += adjacent_traits.size() + 1
 	
 	trait_text_box_component.update_traits(trait_string, traits_size)
+	_inform_dogs_about_trait_changes()
+
+
+func _inform_dogs_about_trait_changes() -> void:
+	for dog in dogs:
+		dog.validate_happyness(traits, get_adjacent_room_traits().keys())
 
 
 func _on_adjecent_room_changed() -> void:

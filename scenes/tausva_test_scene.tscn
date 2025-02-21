@@ -13,8 +13,8 @@ position = Vector2(578, 324)
 [node name="cursor" parent="." instance=ExtResource("2_lh84g")]
 position = Vector2(576, 305)
 
+[node name="DogSpawnTimer" parent="." instance=ExtResource("4_oporp")]
+spawn_positions = [Vector2(705, 373), Vector2(683, 400), Vector2(652, 400), Vector2(616, 399), Vector2(593, 375)]
+
 [node name="Shelter" parent="." instance=ExtResource("1_il057")]
 position = Vector2(576, 305)
-
-[node name="DogSpawnTimer" parent="." instance=ExtResource("4_oporp")]
-position = Vector2(691, 321)

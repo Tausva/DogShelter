@@ -1,6 +1,10 @@
 class_name Dog extends Node2D
 
 @export var dog_trait_library: Array[Trait]
+@export var adjacent_room_hatred_multiplier: float = .3
+@export var irritation_threashold: float = 1
+
+@onready var happyness_component: Node2D = $HappynessComponent
 
 var trait_chance_table: Dictionary = {
 	1: 5,
@@ -27,6 +31,33 @@ func set_random_dog_texture(sprite: Sprite2D):
 	var new_texture = texture_atlas.duplicate()
 	new_texture.region = region
 	sprite.texture = new_texture
+
+
+func validate_happyness(current_room_traits: Dictionary, adjasent_room_traits: Array) -> void:
+	var irritation_value: int = 0
+	var room_traits = _get_unique_hatred_values(current_room_traits)
+	
+	for dog_trait in dog_traits:
+		irritation_value += adjacent_room_hatred_multiplier * _count_overlapping_values(dog_trait.hated_traits, adjasent_room_traits)
+		irritation_value += _count_overlapping_values(dog_trait.hated_traits, room_traits)
+	
+	happyness_component.is_happy = irritation_value < irritation_threashold
+
+
+func _count_overlapping_values(arr1: Array, arr2: Array) -> int:
+	return arr1.filter(func(x): return x in arr2).size()
+
+
+func _get_unique_hatred_values(current_room_traits: Dictionary) -> Array:
+	var hatred_traits: Dictionary
+	for current_room_trait in current_room_traits.keys():
+		var amount = current_room_traits[current_room_trait]
+		for dog_trait in dog_traits:
+			if dog_trait.hated_traits.has(current_room_trait):
+				amount -= 1
+			if amount > 0:
+				hatred_traits.get_or_add(current_room_trait)
+	return hatred_traits.keys()
 
 
 func _generate_traits() -> void:
