@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if camera:
-		scale = Vector2.ONE / camera.zoom
+		control.scale = Vector2.ONE / camera.zoom
 
 
 func update_traits(traits_text: String, line_count: int) -> void:
