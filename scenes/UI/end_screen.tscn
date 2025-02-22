@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://ujrcsmglvkgn"]
+
+[ext_resource type="Script" path="res://scenes/UI/end_screen.gd" id="1_wiudh"]
+[ext_resource type="PackedScene" uid="uid://be1m7qa6cu2pm" path="res://scenes/UI/menu_background.tscn" id="2_rjepn"]
+[ext_resource type="Texture2D" uid="uid://cu633spu6dhx6" path="res://assets/menu/exit normal.png" id="3_4g08n"]
+[ext_resource type="Texture2D" uid="uid://wvlso41ga4vm" path="res://assets/menu/exit press.png" id="4_op11i"]
+[ext_resource type="Texture2D" uid="uid://b77kb50ev7mgy" path="res://assets/menu/exit hover.png" id="5_32eae"]
+[ext_resource type="Texture2D" uid="uid://b4aion6b4xtdd" path="res://assets/menu/menu bar horizontal.png" id="6_b2nfw"]
+[ext_resource type="FontFile" uid="uid://tgma1foyj6jp" path="res://assets/fonts/ThaleahFat.ttf" id="7_4qnwb"]
+
+[node name="EndScreen" type="Node"]
+script = ExtResource("1_wiudh")
+
+[node name="Menu background" parent="." instance=ExtResource("2_rjepn")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="QuitButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 950.0
+offset_top = 511.0
+offset_right = 1083.0
+offset_bottom = 621.0
+texture_normal = ExtResource("3_4g08n")
+texture_pressed = ExtResource("4_op11i")
+texture_hover = ExtResource("5_32eae")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = -272.0
+offset_right = 1949.0
+offset_bottom = 1086.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.307, 0.3)
+texture = ExtResource("6_b2nfw")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_4qnwb")
+theme_override_font_sizes/font_size = 256
+text = "Game over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_4qnwb")
+theme_override_font_sizes/font_size = 128
+text = "You saved 13 dogs!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_4qnwb")
+theme_override_font_sizes/font_size = 128
+text = "Highscore: 15 dogs!"
+horizontal_alignment = 1
+vertical_alignment = 1

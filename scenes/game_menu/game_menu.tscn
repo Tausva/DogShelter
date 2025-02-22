@@ -57,3 +57,12 @@ texture_normal = ExtResource("6_8oo62")
 texture_pressed = ExtResource("7_ebwwb")
 texture_hover = ExtResource("8_60gbl")
 stretch_mode = 0
+
+[node name="HighscoreLabel" type="Label" parent="."]
+offset_left = 152.0
+offset_top = 511.0
+offset_right = 266.0
+offset_bottom = 534.0
+theme_override_fonts/font = ExtResource("4_eg2i8")
+theme_override_font_sizes/font_size = 48
+text = "Highscore: 123"

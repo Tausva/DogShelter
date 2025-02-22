@@ -17,9 +17,11 @@ func _ready():
 func get_dogs_saved() -> int:
 	return dogs_saved
 
+
 func set_dogs_saved(value: int):
 	dogs_saved = value
-	print("game over")
+	get_tree().change_scene_to_file("res://scenes/UI/end_screen.tscn")
+
 
 func add_funds(amount: int):
 	total_funds += amount
