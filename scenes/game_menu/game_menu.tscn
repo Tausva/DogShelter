@@ -1,18 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://b30d8dp7mxo8u"]
+[gd_scene load_steps=11 format=3 uid="uid://b30d8dp7mxo8u"]
 
 [ext_resource type="Script" path="res://scenes/game_menu/game_menu.gd" id="1_j4aor"]
-[ext_resource type="Texture2D" uid="uid://daw1lp01vxxm8" path="res://assets/menu/HUD Menus Blue - Copy.png" id="2_10pe1"]
+[ext_resource type="PackedScene" uid="uid://be1m7qa6cu2pm" path="res://scenes/UI/menu_background.tscn" id="2_be3e7"]
+[ext_resource type="Texture2D" uid="uid://bohngceg5w06a" path="res://assets/menu/menu bar horizontal smol.png" id="2_p8jhy"]
+[ext_resource type="Texture2D" uid="uid://dr04hnlvgx1u4" path="res://assets/menu/play normal.png" id="3_sgsg0"]
+[ext_resource type="Texture2D" uid="uid://bsa4a5q118qd3" path="res://assets/menu/play press.png" id="4_5c2u3"]
+[ext_resource type="FontFile" uid="uid://tgma1foyj6jp" path="res://assets/fonts/ThaleahFat.ttf" id="4_eg2i8"]
+[ext_resource type="Texture2D" uid="uid://rw202lsstees" path="res://assets/menu/play hover.png" id="5_whtbt"]
+[ext_resource type="Texture2D" uid="uid://cu633spu6dhx6" path="res://assets/menu/exit normal.png" id="6_8oo62"]
+[ext_resource type="Texture2D" uid="uid://wvlso41ga4vm" path="res://assets/menu/exit press.png" id="7_ebwwb"]
+[ext_resource type="Texture2D" uid="uid://b77kb50ev7mgy" path="res://assets/menu/exit hover.png" id="8_60gbl"]
 
 [node name="GameMenu" type="Node2D"]
 script = ExtResource("1_j4aor")
 
-[node name="DescriptionBar" type="Sprite2D" parent="."]
-position = Vector2(597.984, 326.212)
-scale = Vector2(0.318791, 0.246766)
-texture = ExtResource("2_10pe1")
+[node name="Menu background" parent="." instance=ExtResource("2_be3e7")]
+position = Vector2(-2, 0)
 
-[node name="PlayButton" type="Button" parent="."]
-offset_left = 723.0
-offset_top = 558.0
-offset_right = 809.0
-offset_bottom = 628.0
+[node name="DescriptionBar" type="Sprite2D" parent="."]
+position = Vector2(601.5, 273)
+scale = Vector2(0.647861, 0.712195)
+texture = ExtResource("2_p8jhy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DescriptionBar"]
+offset_left = -715.0
+offset_top = -211.0
+offset_right = 717.0
+offset_bottom = 211.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_eg2i8")
+theme_override_font_sizes/normal_font_size = 36
+text = "Welcome to Dog Shelter.
+
+Every dog has unique traits that affect happiness. Some dogs love certain traits in others, while some dislike them. Your goal is to place compatible dogs together in chambers to maintain happiness.
+
+A higher happiness level allows you to buy more rooms and expand your shelter. However, if happiness drops too low for too long, the game ends. At the end, your total number of rescued dogs is counted—proving how great of a caretaker you are!
+
+Can you create the perfect shelter and save them all?"
+
+[node name="PlayButton" type="TextureButton" parent="."]
+offset_left = 815.0
+offset_top = 512.0
+offset_right = 941.0
+offset_bottom = 619.0
+texture_normal = ExtResource("3_sgsg0")
+texture_pressed = ExtResource("4_5c2u3")
+texture_hover = ExtResource("5_whtbt")
+stretch_mode = 0
+
+[node name="QuitButton" type="TextureButton" parent="."]
+offset_left = 950.0
+offset_top = 511.0
+offset_right = 1083.0
+offset_bottom = 621.0
+texture_normal = ExtResource("6_8oo62")
+texture_pressed = ExtResource("7_ebwwb")
+texture_hover = ExtResource("8_60gbl")
+stretch_mode = 0
