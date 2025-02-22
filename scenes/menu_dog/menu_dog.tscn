@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdppdee5tob0t"]
+
+[ext_resource type="Script" path="res://scenes/menu_dog/menu_dog.gd" id="1_y26jv"]
+
+[node name="Dog" type="Node2D"]
+script = ExtResource("1_y26jv")
+
+[node name="DogSprite" type="Sprite2D" parent="."]
