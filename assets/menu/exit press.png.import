@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b116n8xbjjx3x"
-path="res://.godot/imported/HUD Text Box Blue.png-e4d90ecce4b18068cf9cc88908e63305.ctex"
+uid="uid://wvlso41ga4vm"
+path="res://.godot/imported/exit press.png-d3d94b12f8960fb441cadf0c37703356.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/HUD Text Box Blue.png"
-dest_files=["res://.godot/imported/HUD Text Box Blue.png-e4d90ecce4b18068cf9cc88908e63305.ctex"]
+source_file="res://assets/menu/exit press.png"
+dest_files=["res://.godot/imported/exit press.png-d3d94b12f8960fb441cadf0c37703356.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daw1lp01vxxm8"
-path="res://.godot/imported/HUD Menus Blue - Copy.png-1948dabee30b48ee34c4fc660df7b8fe.ctex"
+uid="uid://b77kb50ev7mgy"
+path="res://.godot/imported/exit hover.png-ae4d74ac47cd6d39690182b214c1469c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/HUD Menus Blue - Copy.png"
-dest_files=["res://.godot/imported/HUD Menus Blue - Copy.png-1948dabee30b48ee34c4fc660df7b8fe.ctex"]
+source_file="res://assets/menu/exit hover.png"
+dest_files=["res://.godot/imported/exit hover.png-ae4d74ac47cd6d39690182b214c1469c.ctex"]
 
 [params]
 
