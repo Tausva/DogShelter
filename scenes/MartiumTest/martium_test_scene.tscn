@@ -57,6 +57,9 @@ offset_right = 130.0
 offset_bottom = 76.0
 
 [node name="OverallHappynessComponent" parent="." instance=ExtResource("6_5ryfp")]
-position = Vector2(779, 3)
+offset_left = 779.0
+offset_top = 3.0
+offset_right = 779.0
+offset_bottom = 3.0
 
 [node name="CameraController" parent="." instance=ExtResource("7_mr5sw")]

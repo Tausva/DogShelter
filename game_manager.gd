@@ -34,7 +34,7 @@ func get_funds() -> int:
 
 func spend_funds(price: int) -> bool:
 	if price > total_funds:
-		return true
+		return false
 	total_funds = total_funds - price
 	happiness_funds_changed.emit(total_funds)
 	return true
@@ -50,6 +50,13 @@ func add_happy(is_Happy: bool, value: int):
 
 func get_happy_metric_value() -> int:
 	return happy_metric_value
+
+
+func reset_all_parameters_to_default():
+	total_funds = 0
+	happy_metric_value = 0
+	dogs_saved = 0
+	end_game_counter = 0
 
 
 func _start_happiness_timer():

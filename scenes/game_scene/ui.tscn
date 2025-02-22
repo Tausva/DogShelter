@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://codprs50rdpin"]
+[gd_scene load_steps=7 format=3 uid="uid://imn2bnmfhgk5"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/ui.gd" id="1_cl5pg"]
 [ext_resource type="PackedScene" uid="uid://cvxcoja7ghjj3" path="res://scenes/components/overall_happyness_component/overall_happyness_component.tscn" id="1_tmmil"]
