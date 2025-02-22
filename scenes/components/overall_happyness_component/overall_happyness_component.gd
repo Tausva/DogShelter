@@ -25,7 +25,7 @@ func update_bar_color(value: int):
 	if value < -30:
 		target_fill_color = Color(1,0,0)
 		target_background_color = Color(0.931,0.422,0.332)
-	if value < 30 and value > - 30:
+	if value <= 30 and value >= - 30:
 		target_fill_color = Color(1,1,0.4)
 		target_background_color = Color(0.603,0.619,0.422)
 	if value == -100:
