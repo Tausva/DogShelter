@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b30d8dp7mxo8u"]
+
+[ext_resource type="Script" path="res://scenes/game_menu/game_menu.gd" id="1_j4aor"]
+[ext_resource type="Texture2D" uid="uid://daw1lp01vxxm8" path="res://assets/menu/HUD Menus Blue - Copy.png" id="2_10pe1"]
+
+[node name="GameMenu" type="Node2D"]
+script = ExtResource("1_j4aor")
+
+[node name="DescriptionBar" type="Sprite2D" parent="."]
+position = Vector2(597.984, 326.212)
+scale = Vector2(0.318791, 0.246766)
+texture = ExtResource("2_10pe1")
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 723.0
+offset_top = 558.0
+offset_right = 809.0
+offset_bottom = 628.0
