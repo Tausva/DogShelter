@@ -11,16 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://b77kb50ev7mgy" path="res://assets/menu/exit hover.png" id="9_oobxs"]
 
 [node name="PauseMenu" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_52uei")
 
 [node name="Menu background" parent="." instance=ExtResource("2_f1r8t")]
 
-[node name="DescriptionBar" type="Sprite2D" parent="Menu background"]
+[node name="DescriptionBar" type="Sprite2D" parent="."]
 position = Vector2(582, 98.25)
 scale = Vector2(0.453752, 0.0997791)
 texture = ExtResource("3_q5ede")
 
 [node name="ResumeButton" type="TextureButton" parent="."]
+process_mode = 3
 offset_left = 848.0
 offset_top = 198.0
 offset_right = 922.0

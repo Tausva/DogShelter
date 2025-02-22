@@ -25,6 +25,7 @@ scale = Vector2(1.8125, 1.75)
 texture = ExtResource("3_x4su4")
 
 [node name="HappyBar" type="ProgressBar" parent="."]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 1.0
 offset_right = 382.0

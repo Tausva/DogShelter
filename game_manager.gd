@@ -50,6 +50,13 @@ func get_happy_metric_value() -> int:
 	return happy_metric_value
 
 
+func reset_all_parameters_to_default():
+	total_funds = 0
+	happy_metric_value = 0
+	dogs_saved = 0
+	end_game_counter = 0
+
+
 func _start_happiness_timer():
 	var timer = get_tree().create_timer(1.0)
 	timer.timeout.connect(_on_happiness_timer_timeout)
