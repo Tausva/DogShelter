@@ -26,6 +26,7 @@ func _ready() -> void:
 	add_purchase_border(room_spots.pop_front())
 	
 	room_price_increased.emit(current_price)
+	GameManager.prepare_end_game.connect(_on_prepare_end_game)
 
 
 func add_room(room_position: RoomPosition) -> void:
@@ -87,3 +88,11 @@ func _on_room_purchased(room_position: RoomPosition) -> void:
 		add_purchase_border(room_spots.pop_front())
 	
 	room_price_increased.emit(_increase_room_price())
+
+func _on_prepare_end_game():
+	var saved_dogs: int = 0
+	
+	for populated_room in populated_rooms:
+		if populated_room.assigned_room:
+			saved_dogs += populated_room.assigned_room.dogs.size()
+	GameManager.set_dogs_saved(saved_dogs)
