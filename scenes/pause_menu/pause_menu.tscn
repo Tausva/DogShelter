@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp3uwgdgjh4ca"]
+
+[ext_resource type="Script" path="res://scenes/pause_menu/pause_menu.gd" id="1_52uei"]
+[ext_resource type="PackedScene" uid="uid://be1m7qa6cu2pm" path="res://scenes/UI/menu_background.tscn" id="2_f1r8t"]
+[ext_resource type="Texture2D" uid="uid://b4aion6b4xtdd" path="res://assets/menu/menu bar horizontal.png" id="3_q5ede"]
+[ext_resource type="Texture2D" uid="uid://dr04hnlvgx1u4" path="res://assets/menu/play normal.png" id="4_ftb7w"]
+[ext_resource type="Texture2D" uid="uid://bsa4a5q118qd3" path="res://assets/menu/play press.png" id="5_npmi1"]
+[ext_resource type="Texture2D" uid="uid://rw202lsstees" path="res://assets/menu/play hover.png" id="6_r4ndx"]
+[ext_resource type="Texture2D" uid="uid://cu633spu6dhx6" path="res://assets/menu/exit normal.png" id="7_wqdwu"]
+[ext_resource type="Texture2D" uid="uid://wvlso41ga4vm" path="res://assets/menu/exit press.png" id="8_6qxb1"]
+[ext_resource type="Texture2D" uid="uid://b77kb50ev7mgy" path="res://assets/menu/exit hover.png" id="9_oobxs"]
+
+[node name="PauseMenu" type="Node2D"]
+script = ExtResource("1_52uei")
+
+[node name="Menu background" parent="." instance=ExtResource("2_f1r8t")]
+
+[node name="DescriptionBar" type="Sprite2D" parent="Menu background"]
+position = Vector2(582, 98.25)
+scale = Vector2(0.453752, 0.0997791)
+texture = ExtResource("3_q5ede")
+
+[node name="ResumeButton" type="TextureButton" parent="."]
+offset_left = 848.0
+offset_top = 198.0
+offset_right = 922.0
+offset_bottom = 271.0
+texture_normal = ExtResource("4_ftb7w")
+texture_pressed = ExtResource("5_npmi1")
+texture_hover = ExtResource("6_r4ndx")
+stretch_mode = 0
+
+[node name="ExitMainMenuButton" type="TextureButton" parent="."]
+offset_left = 932.0
+offset_top = 199.0
+offset_right = 1014.0
+offset_bottom = 269.0
+texture_normal = ExtResource("7_wqdwu")
+texture_pressed = ExtResource("8_6qxb1")
+texture_hover = ExtResource("9_oobxs")
+stretch_mode = 0
+
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ExitMainMenuButton" to="." method="_on_exit_main_menu_button_pressed"]
