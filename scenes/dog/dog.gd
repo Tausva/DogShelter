@@ -35,7 +35,7 @@ func set_random_dog_texture(sprite: Sprite2D):
 
 func validate_happyness(current_room_traits: Dictionary, adjasent_room_traits: Array) -> void:
 	var irritation_value: int = 0
-	var room_traits = _get_unique_hatred_values(current_room_traits)
+	var room_traits = _get_unique_values(current_room_traits)
 	
 	for dog_trait in dog_traits:
 		irritation_value += adjacent_room_hatred_multiplier * _count_overlapping_values(dog_trait.hated_traits, adjasent_room_traits)
@@ -48,16 +48,16 @@ func _count_overlapping_values(arr1: Array, arr2: Array) -> int:
 	return arr1.filter(func(x): return x in arr2).size()
 
 
-func _get_unique_hatred_values(current_room_traits: Dictionary) -> Array:
-	var hatred_traits: Dictionary
+func _get_unique_values(current_room_traits: Dictionary) -> Array:
+	var traits: Dictionary
 	for current_room_trait in current_room_traits.keys():
 		var amount = current_room_traits[current_room_trait]
 		for dog_trait in dog_traits:
-			if dog_trait.hated_traits.has(current_room_trait):
+			if dog_trait.current_trait == current_room_trait:
 				amount -= 1
-			if amount > 0:
-				hatred_traits.get_or_add(current_room_trait)
-	return hatred_traits.keys()
+		if amount > 0:
+			traits.get_or_add(current_room_trait)
+	return traits.keys()
 
 
 func _generate_traits() -> void:
