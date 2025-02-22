@@ -11,9 +11,8 @@ class_name Dog extends Node2D
 @onready var dog_sprite: Sprite2D = $DogSprite
 
 var trait_chance_table: Dictionary = {
-	1: 5,
-	2: 3,
-	3: 2
+	1: 8,
+	2: 2
 }
 
 var dog_traits: Array[Trait]

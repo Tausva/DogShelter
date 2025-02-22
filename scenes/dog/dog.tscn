@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccw8k1rr6elry"]
+[gd_scene load_steps=15 format=3 uid="uid://ccw8k1rr6elry"]
 
 [ext_resource type="Script" path="res://scenes/dog/dog.gd" id="1_x8gcv"]
 [ext_resource type="PackedScene" uid="uid://fa7xb6y6p17m" path="res://scenes/components/draggable_component/draggable_component.tscn" id="2_28nnr"]
@@ -9,6 +9,8 @@
 [ext_resource type="Resource" uid="uid://b0apuwdj1sf81" path="res://resources/traits/nosy.tres" id="6_hip8k"]
 [ext_resource type="Resource" uid="uid://bv80jbhjfg4mg" path="res://resources/traits/sleepy.tres" id="7_itc5t"]
 [ext_resource type="PackedScene" uid="uid://0d5edy8iikhq" path="res://scenes/components/trait_text_box/trait_text_box_component.tscn" id="8_1j3fx"]
+[ext_resource type="Resource" uid="uid://cudhqj70jpu0b" path="res://resources/traits/firendly.tres" id="8_n3nrn"]
+[ext_resource type="Resource" uid="uid://bb6i8hhhpb05e" path="res://resources/traits/alfa.tres" id="9_nejj7"]
 [ext_resource type="PackedScene" uid="uid://cyoa84fg3cv5m" path="res://scenes/components/happyness_component/happyness_component.tscn" id="10_woa2m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3oar"]
@@ -19,7 +21,7 @@ size = Vector2(23, 23)
 
 [node name="Dog" type="Node2D"]
 script = ExtResource("1_x8gcv")
-dog_trait_library = Array[ExtResource("2_aypbe")]([ExtResource("3_1gm54"), ExtResource("4_1h50o"), ExtResource("5_i4oc4"), ExtResource("6_hip8k"), ExtResource("7_itc5t")])
+dog_trait_library = Array[ExtResource("2_aypbe")]([ExtResource("3_1gm54"), ExtResource("4_1h50o"), ExtResource("5_i4oc4"), ExtResource("6_hip8k"), ExtResource("7_itc5t"), ExtResource("8_n3nrn"), ExtResource("9_nejj7")])
 
 [node name="HappynessComponent" parent="." instance=ExtResource("10_woa2m")]
 position = Vector2(-8, -31)
