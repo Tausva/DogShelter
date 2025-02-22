@@ -4,13 +4,12 @@ extends Node2D
 @onready var happy_image = $Happy
 @onready var angry_image = $Angry
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	GameManager.happiness_changed.connect(_on_update_happiness_bar)
-	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	pass
 
@@ -33,5 +32,10 @@ func show_image(value: int):
 
 
 func _on_update_happiness_bar():
+	var target_value = GameManager.get_happy_metric_value()
+	#var tween = create_tween()
+	
+	#tween.tween_property(happy_bar, "value", target_value, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	happy_bar.value = GameManager.get_happy_metric_value()
 	show_image(happy_bar.value)
+	print(happy_bar.value)
