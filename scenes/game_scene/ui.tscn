@@ -44,8 +44,10 @@ mouse_filter = 1
 layout_mode = 2
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("3_otgxb")
 texture_pressed = ExtResource("4_maibw")
 texture_hover = ExtResource("5_wuqah")
+stretch_mode = 0
