@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://codprs50rdpin"]
+[gd_scene load_steps=7 format=3 uid="uid://codprs50rdpin"]
 
+[ext_resource type="Script" path="res://scenes/game_scene/ui.gd" id="1_cl5pg"]
 [ext_resource type="PackedScene" uid="uid://cvxcoja7ghjj3" path="res://scenes/components/overall_happyness_component/overall_happyness_component.tscn" id="1_tmmil"]
 [ext_resource type="PackedScene" uid="uid://ddgwkkrgquk6a" path="res://scenes/UI/happyness_funds_ui.tscn" id="2_kr4x0"]
 [ext_resource type="Texture2D" uid="uid://c6n3ipt4bd2he" path="res://assets/pixil-frame-0.png" id="3_otgxb"]
@@ -7,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dwadhlfuw082o" path="res://assets/pause_highlight.png" id="5_wuqah"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_cl5pg")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -51,3 +53,5 @@ texture_normal = ExtResource("3_otgxb")
 texture_pressed = ExtResource("4_maibw")
 texture_hover = ExtResource("5_wuqah")
 stretch_mode = 0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]

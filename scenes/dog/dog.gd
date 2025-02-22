@@ -23,10 +23,13 @@ var dog_traits_in_string: String
 var wander_tween: Tween
 var movement_tween: Tween
 
+var bark_sound: String
+
 
 func _ready() -> void:
 	var sprite = get_node("DogSprite")
 	set_random_dog_texture(sprite)
+	bark_sound = "Bark" + str(randi_range(1, 4))
 	_generate_traits()
 
 

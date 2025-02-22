@@ -18,6 +18,9 @@ func _ready() -> void:
 
 
 func drag(new_position: Vector2) -> void:
+	if !is_being_dragged:
+		AudioManager.play_audio((get_parent() as Dog).bark_sound)
+	
 	if starting_position == Vector2.ZERO:
 		starting_position = get_parent().global_position
 	is_being_dragged = true

@@ -1,0 +1,59 @@
+[gd_scene load_steps=20 format=3 uid="uid://bhe2n74yf6j47"]
+
+[ext_resource type="Script" path="res://managers/audio_manager/audio_manager.gd" id="1_bo2w1"]
+[ext_resource type="Script" path="res://scripts/audio/audio_track.gd" id="2_qym57"]
+[ext_resource type="AudioStream" uid="uid://csmjl4ajurq3c" path="res://assets/Music/DogShelterMainTheme.wav" id="3_2po28"]
+[ext_resource type="Script" path="res://scripts/audio/audio_library.gd" id="3_b3icp"]
+[ext_resource type="AudioStream" uid="uid://b7ih7qk7nbdgi" path="res://assets/Music/221755__motion_s__long-birds-forest-ambience.wav" id="4_dgqkc"]
+[ext_resource type="Script" path="res://managers/audio_manager/audio_player_pool.gd" id="5_iq5dp"]
+[ext_resource type="AudioStream" uid="uid://bjbn6ajc62rkx" path="res://assets/Music/100032__nfrae__rose_bark.wav" id="5_xdtol"]
+[ext_resource type="AudioStream" uid="uid://cmie7ifdb1ufm" path="res://assets/Music/110389__soundscalpelcom__animals_dog_bark_springer_spaniel_001.wav" id="6_i571d"]
+[ext_resource type="AudioStream" uid="uid://bgjdxrwxtb36b" path="res://assets/Music/418107__crazymonke9__single-dog-bark-1.wav" id="7_5hc7c"]
+[ext_resource type="AudioStream" uid="uid://c0mkg6w7krvf3" path="res://assets/Music/464406__michael_grinnell__dog_bark_2.wav" id="8_ibgrs"]
+[ext_resource type="AudioStream" uid="uid://c02jcg5t4vsyr" path="res://assets/Music/523138__julianmateo__toy-toy-button-press-switch.wav" id="9_lf2xx"]
+
+[sub_resource type="Resource" id="Resource_n3sut"]
+script = ExtResource("2_qym57")
+title = "Music"
+stream = ExtResource("3_2po28")
+
+[sub_resource type="Resource" id="Resource_xws82"]
+script = ExtResource("2_qym57")
+title = "Ambience"
+stream = ExtResource("4_dgqkc")
+
+[sub_resource type="Resource" id="Resource_wh2la"]
+script = ExtResource("2_qym57")
+title = "Bark1"
+stream = ExtResource("5_xdtol")
+
+[sub_resource type="Resource" id="Resource_y5tm3"]
+script = ExtResource("2_qym57")
+title = "Bark2"
+stream = ExtResource("6_i571d")
+
+[sub_resource type="Resource" id="Resource_kfipe"]
+script = ExtResource("2_qym57")
+title = "Bark3"
+stream = ExtResource("7_5hc7c")
+
+[sub_resource type="Resource" id="Resource_4h6e2"]
+script = ExtResource("2_qym57")
+title = "Bark4"
+stream = ExtResource("8_ibgrs")
+
+[sub_resource type="Resource" id="Resource_280jh"]
+script = ExtResource("2_qym57")
+title = "Button"
+stream = ExtResource("9_lf2xx")
+
+[sub_resource type="Resource" id="Resource_d8a6i"]
+script = ExtResource("3_b3icp")
+audio_tracks = Array[ExtResource("2_qym57")]([SubResource("Resource_n3sut"), SubResource("Resource_xws82"), SubResource("Resource_wh2la"), SubResource("Resource_y5tm3"), SubResource("Resource_kfipe"), SubResource("Resource_4h6e2"), SubResource("Resource_280jh")])
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_bo2w1")
+audio_library = SubResource("Resource_d8a6i")
+
+[node name="AudioPlayerPool" type="Node" parent="."]
+script = ExtResource("5_iq5dp")
