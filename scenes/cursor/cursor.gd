@@ -10,6 +10,9 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and active_draggable_component:
 		_drag_component()
+		
+		if active_draggable_component.get_parent() is Dog:
+			active_draggable_component.get_parent().stop_wandering()
 	elif !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and dragging:
 		_release_component()
 

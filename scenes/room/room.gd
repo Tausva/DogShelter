@@ -42,6 +42,10 @@ func assign_dog(new_dog: Dog) -> void:
 	dogs.append(new_dog)
 	_recalculate_room_traits()
 	room_changed.emit()
+	
+	var room_rect: Rect2 = droppable_area.get_child(0).shape.get_rect()
+	room_rect.position = droppable_area.get_child(0).global_position + room_rect.position
+	new_dog.start_wandering(room_rect)
 
 
 func remove_dog(dog_to_remove: Dog) -> void:

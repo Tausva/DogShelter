@@ -25,7 +25,6 @@ func _on_spawn_timer_timeout() -> void:
 	var drag_component = dog.get_node("DraggableComponent") as DraggableComponent
 	
 	drag_component.connect("dragging_started", Callable(self, "_on_dragging_started"))
-	print(free_positions)
 	if free_positions.size() > 0:
 		dog.position = free_positions[0]
 		$Dogs.add_child(dog)

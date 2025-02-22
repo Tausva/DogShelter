@@ -4,7 +4,11 @@ class_name Dog extends Node2D
 @export var adjacent_room_hatred_multiplier: float = .3
 @export var irritation_threashold: float = 1
 
+@export var wander_speed: float = 10
+
 @onready var happyness_component: Node2D = $HappynessComponent
+@onready var draggable_component: DraggableComponent = $DraggableComponent
+@onready var dog_sprite: Sprite2D = $DogSprite
 
 var trait_chance_table: Dictionary = {
 	1: 5,
@@ -15,6 +19,9 @@ var trait_chance_table: Dictionary = {
 var dog_traits: Array[Trait]
 var random_number_generator = RandomNumberGenerator.new()
 var dog_traits_in_string: String
+
+var wander_tween: Tween
+var movement_tween: Tween
 
 
 func _ready() -> void:
@@ -85,3 +92,36 @@ func _get_trait_count() -> int:
 			trait_count_picker -= trait_chance_table[key]
 	
 	return 0
+
+
+func start_wandering(rect: Rect2) -> void:
+	var wander_to: Vector2 = get_wonder_destination(rect)
+	var wander_duration: float = wander_to.distance_to(global_position) / wander_speed
+	
+	wander_tween = create_tween()
+	wander_tween.tween_property(self, "global_position", wander_to, wander_duration)
+	
+	movement_tween = create_tween()
+	movement_tween.tween_property(dog_sprite, "scale", Vector2(1.15, .85), .3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
+	movement_tween.chain()
+	movement_tween.tween_property(dog_sprite, "scale", Vector2(1, 1), .3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
+	movement_tween.set_loops(20)
+	
+	await wander_tween.finished
+	movement_tween.stop()
+	start_wandering(rect)
+
+
+func stop_wandering() -> void:
+	if wander_tween:
+		wander_tween.stop()
+		movement_tween.stop()
+
+
+func get_wonder_destination(room_rect: Rect2) -> Vector2:
+	var half_size: Vector2 = draggable_component.half_size
+
+	var x = randf_range(room_rect.position.x + half_size.x, room_rect.position.x + room_rect.size.x - half_size.x)
+	var y = randi_range(room_rect.position.y + half_size.y, room_rect.position.y + room_rect.size.y - half_size.y)
+	
+	return Vector2(x,y)

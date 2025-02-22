@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://cwc4soyh0kh4i"]
+[gd_scene load_steps=7 format=4 uid="uid://cwc4soyh0kh4i"]
 
 [ext_resource type="PackedScene" uid="uid://dimkdnbwbvsfd" path="res://scenes/camera_controller/camera_controller.tscn" id="1_55gx6"]
 [ext_resource type="PackedScene" uid="uid://cjnhjj8fcmihv" path="res://scenes/cursor/cursor.tscn" id="2_6683x"]
+[ext_resource type="PackedScene" uid="uid://cvxcoja7ghjj3" path="res://scenes/components/overall_happyness_component/overall_happyness_component.tscn" id="2_np0o1"]
 [ext_resource type="PackedScene" uid="uid://nck7rxri5mp8" path="res://scenes/DogSpawTimer/dog_spawn_timer.tscn" id="3_00r7s"]
 [ext_resource type="TileSet" uid="uid://cgev3cwc4m5jf" path="res://resources/outside_tileset.tres" id="3_kp6ay"]
 [ext_resource type="PackedScene" uid="uid://c4udinlll0vf8" path="res://scenes/shelter/shelter.tscn" id="4_i8wdb"]
@@ -10,6 +11,9 @@
 
 [node name="CameraController" parent="." groups=["camera"] instance=ExtResource("1_55gx6")]
 position = Vector2(578, 324)
+
+[node name="OverallHappynessComponent" parent="CameraController" instance=ExtResource("2_np0o1")]
+position = Vector2(-578, -324)
 
 [node name="cursor" parent="." instance=ExtResource("2_6683x")]
 position = Vector2(576, 305)
