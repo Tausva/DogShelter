@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://codprs50rdpin"]
+
+[ext_resource type="PackedScene" uid="uid://cvxcoja7ghjj3" path="res://scenes/components/overall_happyness_component/overall_happyness_component.tscn" id="1_tmmil"]
+[ext_resource type="PackedScene" uid="uid://ddgwkkrgquk6a" path="res://scenes/UI/happyness_funds_ui.tscn" id="2_kr4x0"]
+[ext_resource type="Texture2D" uid="uid://c6n3ipt4bd2he" path="res://assets/pixil-frame-0.png" id="3_otgxb"]
+[ext_resource type="Texture2D" uid="uid://bc53pi4kqmilx" path="res://assets/pause_pressed.png" id="4_maibw"]
+[ext_resource type="Texture2D" uid="uid://dwadhlfuw082o" path="res://assets/pause_highlight.png" id="5_wuqah"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 36
+
+[node name="OverallHappynessComponent" parent="MarginContainer/VBoxContainer/MarginContainer" instance=ExtResource("1_tmmil")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+
+[node name="HappynessFundsUI" parent="MarginContainer/VBoxContainer/MarginContainer2" instance=ExtResource("2_kr4x0")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("3_otgxb")
+texture_pressed = ExtResource("4_maibw")
+texture_hover = ExtResource("5_wuqah")

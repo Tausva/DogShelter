@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyoa84fg3cv5m"]
+[gd_scene load_steps=5 format=3 uid="uid://cyoa84fg3cv5m"]
 
 [ext_resource type="Texture2D" uid="uid://byiros5lsoc8k" path="res://assets/16x16/happy.png" id="1_rkdje"]
 [ext_resource type="Script" path="res://scenes/components/happyness_component/happyness_component.gd" id="1_txwdk"]
 [ext_resource type="Texture2D" uid="uid://heaaaxcsbnpf" path="res://assets/16x16/angry.png" id="2_c3lwg"]
 
-[node name="Happyness Component" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kymrc"]
+radius = 8.0
+
+[node name="Happyness Component" type="Area2D"]
 script = ExtResource("1_txwdk")
 
 [node name="HappyProgressBar" type="TextureProgressBar" parent="."]
@@ -20,3 +23,7 @@ wait_time = 0.2
 [node name="AngryImage" type="Sprite2D" parent="."]
 position = Vector2(8, 8)
 texture = ExtResource("2_c3lwg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_kymrc")

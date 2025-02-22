@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var happy_bar = $HappyBar
 @onready var happy_image = $Happy

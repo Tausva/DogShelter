@@ -9,7 +9,9 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05yeg"]
 bg_color = Color(1, 1, 0.4, 1)
 
-[node name="OverallHappynessComponent" type="Node2D"]
+[node name="OverallHappynessComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_su7q5")
 
 [node name="Happy" type="Sprite2D" parent="."]

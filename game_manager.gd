@@ -1,6 +1,7 @@
 extends Node
 
 signal happiness_changed
+signal happiness_funds_changed(int)
 
 var total_funds: int = 0
 var happy_metric_value: int = 0
@@ -11,6 +12,7 @@ func _ready():
 
 func add_funds(amount: int):
 	total_funds += amount
+	happiness_funds_changed.emit(total_funds)
 
 
 func get_funds() -> int:
@@ -21,6 +23,7 @@ func spend_funds(price: int) -> bool:
 	if price > total_funds:
 		return false
 	total_funds = total_funds - price
+	happiness_funds_changed.emit(total_funds)
 	return true
 
 
