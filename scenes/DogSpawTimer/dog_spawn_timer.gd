@@ -4,8 +4,8 @@ extends Node2D
 	Vector2(200, 350),
 	Vector2(250, 350),
 	Vector2(300, 350),
-	Vector2(350, 350),
-	Vector2(400, 350)
+	#Vector2(350, 350),
+	#Vector2(400, 350)
 ]
 var dragging_positions := {}
 

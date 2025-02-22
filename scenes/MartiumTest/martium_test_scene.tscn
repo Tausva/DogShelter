@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwopiytt2dth5"]
+[gd_scene load_steps=8 format=3 uid="uid://bwopiytt2dth5"]
 
 [ext_resource type="Script" path="res://scenes/MartiumTest/martium_test_scene.gd" id="1_sbyj4"]
 [ext_resource type="PackedScene" uid="uid://cjnhjj8fcmihv" path="res://scenes/cursor/cursor.tscn" id="2_ar4kh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nck7rxri5mp8" path="res://scenes/DogSpawTimer/dog_spawn_timer.tscn" id="3_xsrpf"]
 [ext_resource type="PackedScene" uid="uid://cyoa84fg3cv5m" path="res://scenes/components/happyness_component/happyness_component.tscn" id="4_uu3u0"]
 [ext_resource type="PackedScene" uid="uid://cvxcoja7ghjj3" path="res://scenes/components/overall_happyness_component/overall_happyness_component.tscn" id="6_5ryfp"]
+[ext_resource type="PackedScene" uid="uid://dimkdnbwbvsfd" path="res://scenes/camera_controller/camera_controller.tscn" id="7_mr5sw"]
 
 [node name="MartiumTestScene" type="Node2D"]
 script = ExtResource("1_sbyj4")
@@ -56,4 +57,6 @@ offset_right = 130.0
 offset_bottom = 76.0
 
 [node name="OverallHappynessComponent" parent="." instance=ExtResource("6_5ryfp")]
-position = Vector2(58, 179)
+position = Vector2(779, 3)
+
+[node name="CameraController" parent="." instance=ExtResource("7_mr5sw")]
