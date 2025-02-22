@@ -44,6 +44,7 @@ mouse_filter = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(32, 32)

@@ -13,7 +13,7 @@ func _ready() -> void:
 	
 	var highscore: HighScore = ScoreManager.get_high_score()
 	if highscore:
-		highscore_label.text = "Highscore: " + str(highscore.score) + " on: " + highscore.date
+		highscore_label.text = "Highscore: " + str(highscore.score) + "\non: " + highscore.date
 	else:
 		highscore_label.text = "No highscore yet"
 

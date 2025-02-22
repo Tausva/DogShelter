@@ -4,13 +4,10 @@ var save_path = "user://high_score.dat"
 
 
 func get_high_score():
-	var dictionary = _load()
-	if !dictionary:
+	var highscore = _load()
+	if !highscore:
 		return null
 	
-	var highscore = HighScore.new()
-	highscore.date = dictionary.get("date")
-	highscore.score = dictionary.get("score")
 	return highscore
 
 
@@ -27,30 +24,27 @@ func save_high_score(score: int):
 
 func _save(content: Dictionary):
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	for i in content.size():
-		file.store_line(str(content.keys()[i],":",content.values()[i],"\r").replace(" ","")) 
+	var json_string = JSON.stringify(content)
+	file.store_line(json_string)
 	
 	file.close()
 
 
 func _load():
+	var highscore = HighScore.new()
+	
+	var file = FileAccess.open(save_path, FileAccess.READ)
+	if not file:
+		return
+	if file == null:
+		return
 	if FileAccess.file_exists(save_path):
-		var file = FileAccess.open(save_path, FileAccess.READ)
-		var content = {}
-		for i in file.get_as_text().count(":"):
-			var line = file.get_line()
-			var key = line.split(":")[0]
-			var value = line.split(":")[1]
-			if value.is_valid_integer():
-				value = int(value)
-			elif value.is_valid_float():
-				value = float(value)
-			elif value.begins_with("["):
-				value = value.trim_prefix("[")
-				value = value.trim_suffix("]")
-				value = value.split(",")
-			content[key] = value
+		if not file.eof_reached():
+			var current_line = JSON.parse_string(file.get_line())
+			if current_line:
+				highscore.date = current_line["date"]
+				highscore.score = current_line["score"]
 		file.close()
 		
-		return content
+		return highscore
 	return null
