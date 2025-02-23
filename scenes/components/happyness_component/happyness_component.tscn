@@ -18,7 +18,7 @@ fill_mode = 4
 texture_progress = ExtResource("1_rkdje")
 
 [node name="HappyProgressTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.05
 
 [node name="AngryImage" type="Sprite2D" parent="."]
 position = Vector2(8, 8)
