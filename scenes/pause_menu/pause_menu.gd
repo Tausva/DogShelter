@@ -47,7 +47,7 @@ func populate_resource_to_text_box(resource: Resource):
 	if resource.hated_traits.is_empty():
 		$Description.text += name + " Likes everybody\n"
 	elif resource.hated_traits.size() == 6:
-		$Description.text += name + " Hates everybody\n"
+		$Description.text += name + " Hates everybody except himself :)\n"
 	else:
 		var hate = []
 		for hate_trait in resource.hated_traits:
