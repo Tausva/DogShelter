@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b30d8dp7mxo8u"]
+[gd_scene load_steps=12 format=3 uid="uid://b30d8dp7mxo8u"]
 
 [ext_resource type="Script" path="res://scenes/game_menu/game_menu.gd" id="1_j4aor"]
 [ext_resource type="PackedScene" uid="uid://be1m7qa6cu2pm" path="res://scenes/UI/menu_background.tscn" id="2_be3e7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cu633spu6dhx6" path="res://assets/menu/exit normal.png" id="6_8oo62"]
 [ext_resource type="Texture2D" uid="uid://wvlso41ga4vm" path="res://assets/menu/exit press.png" id="7_ebwwb"]
 [ext_resource type="Texture2D" uid="uid://b77kb50ev7mgy" path="res://assets/menu/exit hover.png" id="8_60gbl"]
+[ext_resource type="Texture2D" uid="uid://dodqabbgy1q7p" path="res://assets/Dog_medium.png" id="11_48sap"]
 
 [node name="GameMenu" type="Node2D"]
 script = ExtResource("1_j4aor")
@@ -66,3 +67,12 @@ offset_bottom = 534.0
 theme_override_fonts/font = ExtResource("4_eg2i8")
 theme_override_font_sizes/font_size = 48
 text = "Highscore: 123"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 872.0
+offset_top = 312.0
+offset_right = 920.0
+offset_bottom = 347.0
+rotation = 0.137924
+scale = Vector2(5, 5)
+texture = ExtResource("11_48sap")
