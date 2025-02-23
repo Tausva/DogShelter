@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp3uwgdgjh4ca"]
+[gd_scene load_steps=11 format=3 uid="uid://bp3uwgdgjh4ca"]
 
 [ext_resource type="Script" path="res://scenes/pause_menu/pause_menu.gd" id="1_52uei"]
 [ext_resource type="PackedScene" uid="uid://be1m7qa6cu2pm" path="res://scenes/UI/menu_background.tscn" id="2_f1r8t"]
 [ext_resource type="Texture2D" uid="uid://b4aion6b4xtdd" path="res://assets/menu/menu bar horizontal.png" id="3_q5ede"]
 [ext_resource type="Texture2D" uid="uid://dr04hnlvgx1u4" path="res://assets/menu/play normal.png" id="4_ftb7w"]
+[ext_resource type="FontFile" uid="uid://tgma1foyj6jp" path="res://assets/fonts/ThaleahFat.ttf" id="4_rl3m0"]
 [ext_resource type="Texture2D" uid="uid://bsa4a5q118qd3" path="res://assets/menu/play press.png" id="5_npmi1"]
 [ext_resource type="Texture2D" uid="uid://rw202lsstees" path="res://assets/menu/play hover.png" id="6_r4ndx"]
 [ext_resource type="Texture2D" uid="uid://cu633spu6dhx6" path="res://assets/menu/exit normal.png" id="7_wqdwu"]
@@ -20,6 +21,17 @@ script = ExtResource("1_52uei")
 position = Vector2(582, 98.25)
 scale = Vector2(0.453752, 0.0997791)
 texture = ExtResource("3_q5ede")
+
+[node name="Description" type="RichTextLabel" parent="."]
+offset_left = 96.0
+offset_top = 39.0
+offset_right = 1066.0
+offset_bottom = 155.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_rl3m0")
+theme_override_font_sizes/normal_font_size = 16
+text = "Grab a coffe and get back to save dogs :)
+remember "
 
 [node name="ResumeButton" type="TextureButton" parent="."]
 process_mode = 3
