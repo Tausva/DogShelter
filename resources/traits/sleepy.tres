@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_77xmj")
 current_trait = 3
-hated_traits = Array[int]([0, 1])
+hated_traits = Array[int]([0])

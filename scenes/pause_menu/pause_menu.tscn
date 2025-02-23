@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp3uwgdgjh4ca"]
+[gd_scene load_steps=11 format=3 uid="uid://bp3uwgdgjh4ca"]
 
 [ext_resource type="Script" path="res://scenes/pause_menu/pause_menu.gd" id="1_52uei"]
 [ext_resource type="PackedScene" uid="uid://be1m7qa6cu2pm" path="res://scenes/UI/menu_background.tscn" id="2_f1r8t"]
 [ext_resource type="Texture2D" uid="uid://b4aion6b4xtdd" path="res://assets/menu/menu bar horizontal.png" id="3_q5ede"]
 [ext_resource type="Texture2D" uid="uid://dr04hnlvgx1u4" path="res://assets/menu/play normal.png" id="4_ftb7w"]
+[ext_resource type="FontFile" uid="uid://tgma1foyj6jp" path="res://assets/fonts/ThaleahFat.ttf" id="4_rl3m0"]
 [ext_resource type="Texture2D" uid="uid://bsa4a5q118qd3" path="res://assets/menu/play press.png" id="5_npmi1"]
 [ext_resource type="Texture2D" uid="uid://rw202lsstees" path="res://assets/menu/play hover.png" id="6_r4ndx"]
 [ext_resource type="Texture2D" uid="uid://cu633spu6dhx6" path="res://assets/menu/exit normal.png" id="7_wqdwu"]
@@ -17,26 +18,37 @@ script = ExtResource("1_52uei")
 [node name="Menu background" parent="." instance=ExtResource("2_f1r8t")]
 
 [node name="DescriptionBar" type="Sprite2D" parent="."]
-position = Vector2(582, 98.25)
-scale = Vector2(0.453752, 0.0997791)
+position = Vector2(587.5, 154.25)
+scale = Vector2(0.458551, 0.182253)
 texture = ExtResource("3_q5ede")
+
+[node name="Description" type="RichTextLabel" parent="."]
+offset_left = 100.0
+offset_top = 52.0
+offset_right = 1071.0
+offset_bottom = 261.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_rl3m0")
+theme_override_font_sizes/normal_font_size = 16
+text = "Grab a coffe and get back to save dogs :)
+remember "
 
 [node name="ResumeButton" type="TextureButton" parent="."]
 process_mode = 3
-offset_left = 848.0
-offset_top = 198.0
-offset_right = 922.0
-offset_bottom = 271.0
+offset_left = 851.0
+offset_top = 288.0
+offset_right = 925.0
+offset_bottom = 361.0
 texture_normal = ExtResource("4_ftb7w")
 texture_pressed = ExtResource("5_npmi1")
 texture_hover = ExtResource("6_r4ndx")
 stretch_mode = 0
 
 [node name="ExitMainMenuButton" type="TextureButton" parent="."]
-offset_left = 932.0
-offset_top = 199.0
-offset_right = 1014.0
-offset_bottom = 269.0
+offset_left = 935.0
+offset_top = 290.0
+offset_right = 1017.0
+offset_bottom = 360.0
 texture_normal = ExtResource("7_wqdwu")
 texture_pressed = ExtResource("8_6qxb1")
 texture_hover = ExtResource("9_oobxs")
