@@ -31,7 +31,9 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_rl3m0")
 theme_override_font_sizes/normal_font_size = 36
 text = "Grab a coffe and get back to save dogs :)
-remember "
+remember 
+
+"
 
 [node name="ResumeButton" type="TextureButton" parent="."]
 process_mode = 3

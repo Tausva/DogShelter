@@ -66,6 +66,9 @@ func reset_all_parameters_to_default():
 
 
 func _start_happiness_timer():
+	if get_tree().paused:
+		return
+	
 	var timer = get_tree().create_timer(1.0)
 	timer.timeout.connect(_on_happiness_timer_timeout)
 	
