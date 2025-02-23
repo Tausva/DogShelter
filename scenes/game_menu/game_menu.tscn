@@ -69,10 +69,9 @@ theme_override_font_sizes/font_size = 48
 text = "Highscore: 123"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 872.0
-offset_top = 312.0
-offset_right = 920.0
-offset_bottom = 347.0
-rotation = 0.137924
+offset_left = 896.0
+offset_top = 16.0
+offset_right = 944.0
+offset_bottom = 51.0
 scale = Vector2(5, 5)
 texture = ExtResource("11_48sap")
