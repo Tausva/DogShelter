@@ -45,7 +45,7 @@ func _on_exit_main_menu_button_pressed() -> void:
 func populate_resource_to_text_box(resource: Resource):
 	var name = resource.get_trait_name(resource.current_trait)
 	if resource.hated_traits.is_empty():
-		$Description.text += name + " Likes everybody\n"
+		$Description.text += name + " Likes everybody :)\n"
 	elif resource.hated_traits.size() == 6:
 		$Description.text += name + " Hates everybody except himself :)\n"
 	else:
