@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bho1iepp4o74n"]
+[gd_scene load_steps=4 format=3 uid="uid://bho1iepp4o74n"]
 
 [ext_resource type="Script" path="res://scenes/purchase_border/purchase_border.gd" id="1_ctfa8"]
 [ext_resource type="Texture2D" uid="uid://bjhsw3jhq8mv8" path="res://assets/16x16/purchase_border.png" id="1_qveje"]
+[ext_resource type="FontFile" uid="uid://tgma1foyj6jp" path="res://assets/fonts/ThaleahFat.ttf" id="3_wp4jc"]
 
 [node name="PurchaseBorder" type="Node2D"]
 script = ExtResource("1_ctfa8")
@@ -26,6 +27,7 @@ offset_right = 86.0
 offset_bottom = 58.0
 tooltip_text = "Price"
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_wp4jc")
 text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1

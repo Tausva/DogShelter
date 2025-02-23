@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddgwkkrgquk6a"]
+[gd_scene load_steps=4 format=3 uid="uid://ddgwkkrgquk6a"]
 
 [ext_resource type="Script" path="res://scenes/UI/happyness_funds_ui.gd" id="1_oddli"]
+[ext_resource type="FontFile" uid="uid://tgma1foyj6jp" path="res://assets/fonts/ThaleahFat.ttf" id="2_ftsqy"]
 [ext_resource type="Texture2D" uid="uid://byiros5lsoc8k" path="res://assets/16x16/happy.png" id="2_yxpp4"]
 
 [node name="HappynessFundsUI" type="Control"]
@@ -19,6 +20,7 @@ offset_bottom = 23.0
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ftsqy")
 theme_override_font_sizes/font_size = 30
 text = "12"
 horizontal_alignment = 2
