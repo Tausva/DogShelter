@@ -4,6 +4,7 @@ signal purchased(border_position: RoomPosition)
 
 @onready var label: Label = $Control/Label
 
+var new_dog_spawn_positions: Array[Vector2]
 var border_position: RoomPosition
 var current_price: int
 
@@ -11,6 +12,7 @@ var current_price: int
 func _try_purchase() -> void:
 	if GameManager.spend_funds(current_price):
 		purchased.emit(border_position)
+		GameManager.add_new_dog_spawns(new_dog_spawn_positions)
 		AudioManager.play_audio("Buy")
 		queue_free()
 	else:

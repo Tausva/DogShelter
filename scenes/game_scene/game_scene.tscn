@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cwc4soyh0kh4i"]
+[gd_scene load_steps=9 format=4 uid="uid://cwc4soyh0kh4i"]
 
 [ext_resource type="PackedScene" uid="uid://imn2bnmfhgk5" path="res://scenes/game_scene/ui.tscn" id="1_2mcvy"]
 [ext_resource type="PackedScene" uid="uid://dimkdnbwbvsfd" path="res://scenes/camera_controller/camera_controller.tscn" id="1_55gx6"]
@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://dtie8kmthp1dh" path="res://resources/outside_tileset.tres" id="3_kp6ay"]
 [ext_resource type="PackedScene" uid="uid://c4udinlll0vf8" path="res://scenes/shelter/shelter.tscn" id="4_i8wdb"]
 [ext_resource type="PackedScene" uid="uid://bp3uwgdgjh4ca" path="res://scenes/pause_menu/pause_menu.tscn" id="7_jki3v"]
+[ext_resource type="PackedScene" uid="uid://dk70mewjdimuh" path="res://scenes/spawn_table/spawn_table.tscn" id="8_n0lo5"]
 
 [node name="GameScene" type="Node"]
 
@@ -29,8 +30,12 @@ tile_map_data = PackedByteArray("AAArAAIAYgADAAIAAAArAAMAYgADAAMAAAAsAAIAYgAEAAI
 tile_set = ExtResource("3_kp6ay")
 
 [node name="Shelter" parent="." instance=ExtResource("4_i8wdb")]
-position = Vector2(576, 305)
+position = Vector2(576, 303)
 
 [node name="DogSpawnTimer" parent="Shelter" instance=ExtResource("3_00r7s")]
 position = Vector2(-576, -305)
 spawn_positions = [Vector2(688, 332), Vector2(704, 396), Vector2(672, 396), Vector2(624, 396), Vector2(592, 396)]
+
+[node name="SpawnTable25" parent="Shelter/DogSpawnTimer" instance=ExtResource("8_n0lo5")]
+visible = false
+position = Vector2(273, 245)

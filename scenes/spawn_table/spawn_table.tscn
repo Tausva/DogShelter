@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk70mewjdimuh"]
+
+[ext_resource type="TileSet" uid="uid://bwkh1q4mn28ms" path="res://resources/room_tileset.tres" id="1_727ry"]
+[ext_resource type="Script" path="res://scenes/spawn_table/spawn_table.gd" id="1_le67m"]
+
+[node name="SpawnTable" type="Node2D"]
+script = ExtResource("1_le67m")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-16, -10)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 4, 0, 13, 0, 14, 0, 0, 0, 0, 0, 1, 0, 4, 0, 13, 0, 15, 0, 0, 0, 1, 0, 0, 0, 4, 0, 15, 0, 14, 0, 0, 0, 1, 0, 1, 0, 4, 0, 15, 0, 15, 0, 0, 0)
+tile_set = ExtResource("1_727ry")

@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scenes/game_scene/ui.gd" id="1_cl5pg"]
 [ext_resource type="PackedScene" uid="uid://cvxcoja7ghjj3" path="res://scenes/components/overall_happyness_component/overall_happyness_component.tscn" id="1_tmmil"]
 [ext_resource type="PackedScene" uid="uid://ddgwkkrgquk6a" path="res://scenes/UI/happyness_funds_ui.tscn" id="2_kr4x0"]
-[ext_resource type="Texture2D" uid="uid://c6n3ipt4bd2he" path="res://assets/pixil-frame-0.png" id="3_otgxb"]
-[ext_resource type="Texture2D" uid="uid://bc53pi4kqmilx" path="res://assets/pause_pressed.png" id="4_maibw"]
-[ext_resource type="Texture2D" uid="uid://dwadhlfuw082o" path="res://assets/pause_highlight.png" id="5_wuqah"]
+[ext_resource type="Texture2D" uid="uid://dwthb2ytq2p1m" path="res://assets/menu/pause normal.png" id="4_cklyu"]
+[ext_resource type="Texture2D" uid="uid://ct6lvsllnp2ys" path="res://assets/menu/pause press.png" id="5_0mvmv"]
+[ext_resource type="Texture2D" uid="uid://dyieqqds0gm5j" path="res://assets/menu/pause hover.png" id="6_efbv0"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_cl5pg")
@@ -50,9 +50,9 @@ mouse_filter = 2
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 8
-texture_normal = ExtResource("3_otgxb")
-texture_pressed = ExtResource("4_maibw")
-texture_hover = ExtResource("5_wuqah")
+texture_normal = ExtResource("4_cklyu")
+texture_pressed = ExtResource("5_0mvmv")
+texture_hover = ExtResource("6_efbv0")
 stretch_mode = 0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]

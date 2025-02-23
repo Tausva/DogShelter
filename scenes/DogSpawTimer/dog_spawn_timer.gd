@@ -10,6 +10,10 @@ extends Node2D
 var dragging_positions := {}
 
 
+func _ready() -> void:
+	GameManager.spawns_requested.connect(_on_spawns_requested)
+
+
 func _on_spawn_timer_timeout() -> void:
 	var dog_scene: PackedScene = load("res://scenes/dog/dog.tscn")
 	var dog = dog_scene.instantiate()
@@ -47,4 +51,13 @@ func _on_dragging_started(is_dragging: bool, dragged_dog: Node2D):
 			dragging_positions[dragged_dog] = dragged_dog.position
 	else:
 		dragging_positions.erase(dragged_dog)
+
+
+func _on_spawns_requested(spawns: Array[Vector2]) -> void:
+	var table_scene = preload("res://scenes/spawn_table/spawn_table.tscn") as PackedScene
 	
+	for spawn in spawns:
+		spawn_positions.append(spawn)
+		var table = table_scene.instantiate()
+		add_child(table)
+		table.position = spawn

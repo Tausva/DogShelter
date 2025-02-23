@@ -1,8 +1,22 @@
-[gd_scene load_steps=22 format=4 uid="uid://c4udinlll0vf8"]
+[gd_scene load_steps=38 format=4 uid="uid://c4udinlll0vf8"]
 
 [ext_resource type="Script" path="res://scenes/shelter/shelter.gd" id="1_iuunh"]
 [ext_resource type="TileSet" uid="uid://bwkh1q4mn28ms" path="res://resources/room_tileset.tres" id="1_wx3bc"]
 [ext_resource type="Script" path="res://scripts/room_position.gd" id="2_plup2"]
+[ext_resource type="Script" path="res://scripts/dog_spawn_position.gd" id="3_wgu6p"]
+[ext_resource type="Resource" uid="uid://c53ra5ny688u0" path="res://resources/tables/1.tres" id="4_frxw1"]
+[ext_resource type="Resource" uid="uid://bs00d243635ne" path="res://resources/tables/2.tres" id="5_3liwh"]
+[ext_resource type="Resource" uid="uid://1vr04ugbopg6" path="res://resources/tables/3.tres" id="6_ncrad"]
+[ext_resource type="Resource" uid="uid://boiboou7tg7u8" path="res://resources/tables/4.tres" id="7_5jbkt"]
+[ext_resource type="Resource" uid="uid://d204txgpky88f" path="res://resources/tables/5.tres" id="8_s6o2r"]
+[ext_resource type="Resource" uid="uid://boxppkcwgcn2i" path="res://resources/tables/6.tres" id="9_bpvrd"]
+[ext_resource type="Resource" uid="uid://dqm8monuqxnsr" path="res://resources/tables/7.tres" id="10_7phin"]
+[ext_resource type="Resource" uid="uid://dpbwar03j0an7" path="res://resources/tables/8.tres" id="11_p47vf"]
+[ext_resource type="Resource" uid="uid://cvitaqv3yb7ia" path="res://resources/tables/9.tres" id="12_pc6vg"]
+[ext_resource type="Resource" uid="uid://du2nm7ge52dx4" path="res://resources/tables/10.tres" id="13_3s8d4"]
+[ext_resource type="Resource" uid="uid://c0j6ra28w2vp" path="res://resources/tables/11.tres" id="14_qvjcs"]
+[ext_resource type="Resource" uid="uid://dgryw0pgn2lva" path="res://resources/tables/12.tres" id="15_xg3rf"]
+[ext_resource type="Resource" uid="uid://dqbjd3crggl2d" path="res://resources/tables/13.tres" id="16_883re"]
 
 [sub_resource type="Resource" id="Resource_ionve"]
 script = ExtResource("2_plup2")
@@ -130,9 +144,18 @@ has_window = true
 direction = 1
 adjecent_positions = Array[int]([15])
 
+[sub_resource type="Resource" id="Resource_tr4dl"]
+script = ExtResource("3_wgu6p")
+positions = Array[Vector2]([])
+
+[sub_resource type="Resource" id="Resource_qvlc2"]
+script = ExtResource("3_wgu6p")
+positions = Array[Vector2]([])
+
 [node name="Shelter" type="Node2D"]
 script = ExtResource("1_iuunh")
 room_spots = Array[ExtResource("2_plup2")]([SubResource("Resource_ionve"), SubResource("Resource_jtpu5"), SubResource("Resource_ckwss"), SubResource("Resource_yg8hy"), SubResource("Resource_xpho7"), SubResource("Resource_th6ss"), SubResource("Resource_sa8q3"), SubResource("Resource_e3ee1"), SubResource("Resource_rk1sv"), SubResource("Resource_hpg4n"), SubResource("Resource_mm1hc"), SubResource("Resource_6asro"), SubResource("Resource_xfpl2"), SubResource("Resource_6x7ii"), SubResource("Resource_gtxct"), SubResource("Resource_yt14m"), SubResource("Resource_nlxwy"), SubResource("Resource_6av3s")])
+dog_spawn_positions = Array[ExtResource("3_wgu6p")]([SubResource("Resource_tr4dl"), SubResource("Resource_qvlc2"), ExtResource("4_frxw1"), ExtResource("5_3liwh"), ExtResource("6_ncrad"), ExtResource("7_5jbkt"), ExtResource("8_s6o2r"), ExtResource("9_bpvrd"), ExtResource("10_7phin"), ExtResource("11_p47vf"), ExtResource("12_pc6vg"), ExtResource("13_3s8d4"), ExtResource("14_qvjcs"), ExtResource("15_xg3rf"), ExtResource("16_883re")])
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -2
