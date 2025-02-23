@@ -11,7 +11,10 @@ var current_price: int
 func _try_purchase() -> void:
 	if GameManager.spend_funds(current_price):
 		purchased.emit(border_position)
+		AudioManager.play_audio("Buy")
 		queue_free()
+	else:
+		AudioManager.play_audio("Deny")
 
 
 func _on_button_pressed() -> void:

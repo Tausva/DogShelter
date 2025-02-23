@@ -83,10 +83,6 @@ func _recalculate_room_traits() -> void:
 	var trait_string: String
 	var traits_size = traits.size()
 	
-	if !traits.is_empty():
-		trait_string += "Room:\n"
-		traits_size += 1
-	
 	for dog_trait in traits:
 		trait_string += Trait.TraitType.keys()[dog_trait].capitalize()
 		if traits[dog_trait] > 1:
@@ -94,19 +90,15 @@ func _recalculate_room_traits() -> void:
 		trait_string += "\n"
 
 	var adjacent_traits = get_adjacent_room_traits()
+	var adjacent_traits_string: String
 	if !adjacent_traits.is_empty():
-		if !traits.is_empty():
-			traits_size += 1
-			trait_string += "\n"
-		trait_string += "Adjacent:\n"
 		for dog_trait in adjacent_traits:
-			trait_string += Trait.TraitType.keys()[dog_trait].capitalize()
+			adjacent_traits_string += Trait.TraitType.keys()[dog_trait].capitalize()
 			if adjacent_traits[dog_trait] > 1:
-				trait_string += " x " + str(adjacent_traits[dog_trait])
-			trait_string += "\n"
-		traits_size += adjacent_traits.size() + 1
+				adjacent_traits_string += " x " + str(adjacent_traits[dog_trait])
+			adjacent_traits_string += "\n"
 	
-	trait_text_box_component.update_traits(trait_string, traits_size)
+	trait_text_box_component.update_traits(trait_string, Color.BLACK, adjacent_traits_string, Color.DIM_GRAY, traits_size + adjacent_traits.size())
 	_inform_dogs_about_trait_changes()
 
 

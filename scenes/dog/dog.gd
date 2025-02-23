@@ -78,7 +78,16 @@ func _generate_traits() -> void:
 		dog_traits.append(dog_trait)
 		dog_traits_in_string += dog_trait.TraitType.keys()[dog_trait.current_trait].capitalize() + "\n"
 	
-	$TraitTextBoxComponent.update_traits(dog_traits_in_string, dog_traits.size())
+	var hated_traits: Dictionary
+	for dog_trait in dog_traits:
+		for hated_trait in dog_trait.hated_traits:
+			hated_traits.get_or_add(hated_trait)
+	
+	var hated_traits_in_string: String
+	for hated_trait in hated_traits.keys():
+		hated_traits_in_string += Trait.TraitType.keys()[hated_trait].capitalize() + "\n"
+	
+	$TraitTextBoxComponent.update_traits(dog_traits_in_string, Color(0, 0, 0), hated_traits_in_string, Color(1, 0, 0), dog_traits.size() + hated_traits.size())
 
 
 func _get_trait_count() -> int:

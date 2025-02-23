@@ -10,6 +10,7 @@ var dogs_saved: int = 0
 var end_game_counter: int = 0
 var finish_game_seconds: int = 10
 
+
 func _ready():
 	_start_happiness_timer()
 

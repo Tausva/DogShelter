@@ -29,7 +29,8 @@ func _drag_component() -> void:
 
 func _release_component() -> void:
 	dragging = false
-	active_draggable_component.release()
+	if active_draggable_component:
+		active_draggable_component.release()
 
 
 func _on_area_entered(area: Area2D) -> void:

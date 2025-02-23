@@ -1,8 +1,9 @@
 class_name TraitTextBoxComponent extends Area2D
 
-@onready var trait_text_box: RichTextLabel = $Node2D/Control/TraitTextBox
 @onready var control: Control = $Node2D/Control
 @onready var node_2d: Node2D = $Node2D
+@onready var second_label: Label = $Node2D/Control/NinePatchRect/MarginContainer/VBoxContainer/Label2
+@onready var first_label: Label = $Node2D/Control/NinePatchRect/MarginContainer/VBoxContainer/Label
 
 @export var box_spawn_point: Node2D
 
@@ -21,13 +22,24 @@ func _process(delta: float) -> void:
 		control.scale = Vector2.ONE / camera.zoom
 
 
-func update_traits(traits_text: String, line_count: int) -> void:
+func update_traits(first_text: String, first_text_color: Color, second_text: String, second_text_color: Color, line_count: int) -> void:
 	var line_height = 25
-	control.size.y = line_count * line_height
-	control.position.y = line_count * line_height / -2
-	trait_text_box.text = traits_text
 	
-	initialized = !traits_text.is_empty()
+	if !first_text.is_empty() and !second_text.is_empty():
+		line_count += 1
+		control.size.y = line_count * line_height
+	else:
+		control.size.y = (line_count + .5) * line_height
+	
+	control.position.y = line_count * line_height / -2
+	
+	first_label.text = first_text
+	second_label.text = second_text
+	
+	first_label.add_theme_color_override("font_color", first_text_color)
+	second_label.add_theme_color_override("font_color", second_text_color)
+	
+	initialized = !first_text.is_empty() or !second_text.is_empty()
 	
 	if is_entered:
 		control.show()

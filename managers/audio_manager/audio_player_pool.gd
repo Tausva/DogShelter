@@ -17,3 +17,6 @@ func get_audio_stream_player(bus: String = "Master") -> AudioStreamPlayer:
 
 func _on_player_finished(stream_player: AudioStreamPlayer) -> void:
 	ready_audio_players.append(stream_player)
+	var connections = stream_player.finished.get_connections()
+	for connection in connections:
+		stream_player.finished.disconnect(connection["callable"])

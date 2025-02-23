@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func _on_quit_button_pressed() -> void:
 	AudioManager.play_audio("Button")
+	GameManager.reset_all_parameters_to_default()
 	var tree = get_tree()
 	await tree.create_timer(press_delay).timeout
 	tree.change_scene_to_file("res://scenes/game_menu/game_menu.tscn")

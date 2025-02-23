@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhe2n74yf6j47"]
+[gd_scene load_steps=24 format=3 uid="uid://bhe2n74yf6j47"]
 
 [ext_resource type="Script" path="res://managers/audio_manager/audio_manager.gd" id="1_bo2w1"]
 [ext_resource type="Script" path="res://scripts/audio/audio_track.gd" id="2_qym57"]
@@ -11,6 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://bgjdxrwxtb36b" path="res://assets/Music/418107__crazymonke9__single-dog-bark-1.wav" id="7_5hc7c"]
 [ext_resource type="AudioStream" uid="uid://c0mkg6w7krvf3" path="res://assets/Music/464406__michael_grinnell__dog_bark_2.wav" id="8_ibgrs"]
 [ext_resource type="AudioStream" uid="uid://c02jcg5t4vsyr" path="res://assets/Music/523138__julianmateo__toy-toy-button-press-switch.wav" id="9_lf2xx"]
+[ext_resource type="AudioStream" uid="uid://bay2oivs0uwbr" path="res://assets/Music/525147__williamornelas__coins-selling-sound.wav" id="10_cpfrx"]
+[ext_resource type="AudioStream" uid="uid://33wyc6oo53qt" path="res://assets/Music/551543__philracoindie__8-bit-denyerror-sound.wav" id="11_vh684"]
 
 [sub_resource type="Resource" id="Resource_n3sut"]
 script = ExtResource("2_qym57")
@@ -47,9 +49,19 @@ script = ExtResource("2_qym57")
 title = "Button"
 stream = ExtResource("9_lf2xx")
 
+[sub_resource type="Resource" id="Resource_ke1n8"]
+script = ExtResource("2_qym57")
+title = "Buy"
+stream = ExtResource("10_cpfrx")
+
+[sub_resource type="Resource" id="Resource_75okw"]
+script = ExtResource("2_qym57")
+title = "Deny"
+stream = ExtResource("11_vh684")
+
 [sub_resource type="Resource" id="Resource_d8a6i"]
 script = ExtResource("3_b3icp")
-audio_tracks = Array[ExtResource("2_qym57")]([SubResource("Resource_n3sut"), SubResource("Resource_xws82"), SubResource("Resource_wh2la"), SubResource("Resource_y5tm3"), SubResource("Resource_kfipe"), SubResource("Resource_4h6e2"), SubResource("Resource_280jh")])
+audio_tracks = Array[ExtResource("2_qym57")]([SubResource("Resource_n3sut"), SubResource("Resource_xws82"), SubResource("Resource_wh2la"), SubResource("Resource_y5tm3"), SubResource("Resource_kfipe"), SubResource("Resource_4h6e2"), SubResource("Resource_280jh"), SubResource("Resource_ke1n8"), SubResource("Resource_75okw")])
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_bo2w1")
