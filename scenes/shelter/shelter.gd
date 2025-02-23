@@ -5,6 +5,7 @@ signal room_price_increased(int)
 @onready var room_container: Node2D = $RoomContainer
 
 @export var room_spots: Array[RoomPosition]
+@export var dog_spawn_positions: Array[DogSpawnPosition]
 
 var purchase_border_y_offset: float = -30
 var old_price: int = 1
@@ -88,8 +89,11 @@ func _on_room_purchased(room_position: RoomPosition) -> void:
 		add_purchase_border(room_spots.pop_front())
 	
 	room_price_increased.emit(_increase_room_price())
+	
+	GameManager.add_new_dog_spawns(dog_spawn_positions[newest_room_index - 4].positions)
 
-func _on_prepare_end_game():
+
+func _on_prepare_end_game() -> void:
 	var saved_dogs: int = 0
 	
 	for populated_room in populated_rooms:

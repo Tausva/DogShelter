@@ -3,6 +3,7 @@ extends Node
 signal happiness_changed
 signal prepare_end_game
 signal happiness_funds_changed(int)
+signal spawns_requested(Array)
 
 var total_funds: int = 0
 var happy_metric_value: int = 0
@@ -35,10 +36,14 @@ func get_funds() -> int:
 
 func spend_funds(price: int) -> bool:
 	if price > total_funds:
-		return false
+		return true
 	total_funds = total_funds - price
 	happiness_funds_changed.emit(total_funds)
 	return true
+
+
+func add_new_dog_spawns(spawns: Array[Vector2]) -> void:
+	spawns_requested.emit(spawns)
 
 
 func add_happy(is_Happy: bool, value: int):
