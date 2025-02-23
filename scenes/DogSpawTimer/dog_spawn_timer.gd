@@ -59,5 +59,5 @@ func _on_spawns_requested(spawns: Array[Vector2]) -> void:
 	for spawn in spawns:
 		spawn_positions.append(spawn)
 		var table = table_scene.instantiate()
-		add_child(table)
+		$Tables.add_child(table)
 		table.position = spawn

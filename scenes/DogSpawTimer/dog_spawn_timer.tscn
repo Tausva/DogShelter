@@ -9,6 +9,8 @@ script = ExtResource("1_5bh5m")
 wait_time = 5.0
 autostart = true
 
+[node name="Tables" type="Node2D" parent="."]
+
 [node name="Dogs" type="Node2D" parent="."]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
