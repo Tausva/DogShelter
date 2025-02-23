@@ -44,8 +44,11 @@ func _on_exit_main_menu_button_pressed() -> void:
 
 func populate_resource_to_text_box(resource: Resource):
 	var name = resource.get_trait_name(resource.current_trait)
-	var hate = []
-	for hate_trait in resource.hated_traits:
-		hate.append(resource.get_trait_name(hate_trait))
-	var hate_values = ", ".join(hate)
-	$Description.text += name + " Hates: " + hate_values + "\n"
+	if resource.hated_traits.is_empty():
+		$Description.text += name + " Likes everybody\n"
+	else:
+		var hate = []
+		for hate_trait in resource.hated_traits:
+			hate.append(resource.get_trait_name(hate_trait))
+		var hate_values = ", ".join(hate)
+		$Description.text += name + " Hates: " + hate_values + "\n"
