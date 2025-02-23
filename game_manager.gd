@@ -36,7 +36,7 @@ func get_funds() -> int:
 
 func spend_funds(price: int) -> bool:
 	if price > total_funds:
-		return true
+		return false
 	total_funds = total_funds - price
 	happiness_funds_changed.emit(total_funds)
 	return true
