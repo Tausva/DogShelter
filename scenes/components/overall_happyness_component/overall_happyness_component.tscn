@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvxcoja7ghjj3"]
+[gd_scene load_steps=7 format=3 uid="uid://cvxcoja7ghjj3"]
 
 [ext_resource type="Script" path="res://scenes/components/overall_happyness_component/overall_happyness_component.gd" id="1_su7q5"]
 [ext_resource type="Texture2D" uid="uid://byiros5lsoc8k" path="res://assets/16x16/happy.png" id="2_ru6t5"]
 [ext_resource type="Texture2D" uid="uid://heaaaxcsbnpf" path="res://assets/16x16/angry.png" id="3_x4su4"]
+[ext_resource type="FontFile" uid="uid://tgma1foyj6jp" path="res://assets/fonts/ThaleahFat.ttf" id="4_8hdqo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybsgw"]
 
@@ -31,6 +32,7 @@ offset_top = 1.0
 offset_right = 382.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0, 0, 0, 0.999)
+theme_override_fonts/font = ExtResource("4_8hdqo")
 theme_override_styles/background = SubResource("StyleBoxFlat_ybsgw")
 theme_override_styles/fill = SubResource("StyleBoxFlat_05yeg")
 min_value = -100.0

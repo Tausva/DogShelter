@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=4 uid="uid://be1m7qa6cu2pm"]
 
-[ext_resource type="TileSet" uid="uid://cgev3cwc4m5jf" path="res://resources/outside_tileset.tres" id="1_bh7xr"]
+[ext_resource type="TileSet" uid="uid://dtie8kmthp1dh" path="res://resources/outside_tileset.tres" id="1_bh7xr"]
 [ext_resource type="Script" path="res://scenes/UI/menu_background.gd" id="1_j46yd"]
 
 [node name="Menu background" type="Node2D"]
