@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DogSpawnPosition" load_steps=2 format=3 uid="uid://dqm8monuqxnsr"]
+
+[ext_resource type="Script" path="res://scripts/dog_spawn_position.gd" id="1_qeqpu"]
+
+[resource]
+script = ExtResource("1_qeqpu")
+positions = Array[Vector2]([Vector2(79, 338), Vector2(49, 338)])

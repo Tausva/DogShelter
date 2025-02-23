@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DogSpawnPosition" load_steps=2 format=3 uid="uid://dpbwar03j0an7"]
+
+[ext_resource type="Script" path="res://scripts/dog_spawn_position.gd" id="1_v3dgs"]
+
+[resource]
+script = ExtResource("1_v3dgs")
+positions = Array[Vector2]([Vector2(-12, 338), Vector2(-43, 338)])
